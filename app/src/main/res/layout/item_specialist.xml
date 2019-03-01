@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ddc"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row_spechialist_txt"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:textAlignment="gravity"
+        android:gravity="right"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/cairo_semibold"
+        android:textSize="@dimen/_20sdp"/>
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Dealer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="App_name">Dealer</string>
+    <string name="home_app_description">التطبيق الاول لكل الخدمات التي تحتاجها</string>
+    <string name="home_order_service_button">طلب خدمه</string>
+    <string name="home_provide_service_button">عرض خدمه</string>
+    <string name="home_login">تسجيل الدخول</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login_email">الايمال</string>
+    <string name="login_user_name">اسم المستخدم</string>
+    <string name="login_password">كلمة المرور</string>
+    <string name="login_btn_login">تسجيل الدخول</string>
+    <string name="login_hedar">تسجيل الدخول</string>
+    <string name="category_header">الديلر</string>
+    <string name="response_fail">عفوا هناك خطاء</string>
+    <string name="no_internet_msg">لا يوجد اتصال بالشبكه</string>
+    <string name="register_btn_regist">انشاء حساب</string>
+    <string name="register_email">الايميل او رقم الهاتف</string>
+    <string name="register_hedar">انشاء حساب</string>
+    <string name="login_confirm_password">تاكيد كلمة المرور</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+
+
+    <string name="facebook_app_id">2041244422842026</string>
+    <string name="fb_login_protocol_scheme">fb2041244422842026</string>
+
+</resources>

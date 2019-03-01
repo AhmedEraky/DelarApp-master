@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "450990633984",
+    "firebase_url": "https://delar-b18bf.firebaseio.com",
+    "project_id": "delar-b18bf",
+    "storage_bucket": "delar-b18bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450990633984:android:cb56a7d056ba4167",
+        "android_client_info": {
+          "package_name": "alessandro.firebaseandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450990633984-fb42b5d2go66iiorq9tcncksg4p95b49.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "alessandro.firebaseandroid",
+            "certificate_hash": "87f236e9f43ce9046dada07e69aaa085dedcaefc"
+          }
+        },
+        {
+          "client_id": "450990633984-9r79voqc98ljeamsarat1tovhru0e2ta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMjatr_fBHFW05vjkoBZcVnGAuBSorcJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450990633984-9r79voqc98ljeamsarat1tovhru0e2ta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450990633984:android:b45df99c0518a103",
+        "android_client_info": {
+          "package_name": "com.vegeta.my.dealer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450990633984-n5bsn0m25jfmibversqg2k2f5tv3t4fv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vegeta.my.dealer",
+            "certificate_hash": "87f236e9f43ce9046dada07e69aaa085dedcaefc"
+          }
+        },
+        {
+          "client_id": "450990633984-nlpdim4eq96a3lulrt3741o9aat3abe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vegeta.my.dealer",
+            "certificate_hash": "31e98aeb0bb4fdd2af290106e18833f54c5a207e"
+          }
+        },
+        {
+          "client_id": "450990633984-9r79voqc98ljeamsarat1tovhru0e2ta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMjatr_fBHFW05vjkoBZcVnGAuBSorcJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450990633984-9r79voqc98ljeamsarat1tovhru0e2ta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
