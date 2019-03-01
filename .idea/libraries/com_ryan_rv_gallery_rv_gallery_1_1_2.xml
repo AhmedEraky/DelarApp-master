@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.ryan.rv_gallery:rv-gallery-1.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rv-gallery-1.1.2.aar/510ca83a43c6a8d75f6f946b86e7a4ef/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rv-gallery-1.1.2.aar/510ca83a43c6a8d75f6f946b86e7a4ef/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

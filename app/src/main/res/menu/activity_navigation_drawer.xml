@@ -26,6 +26,11 @@
             android:title="الحساب الشخصي"
             />
         <item
+            android:id="@+id/nav_msg"
+            android:icon="@drawable/mail"
+            android:title="الرسائل"
+            />
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/password"
             android:title="تسجيل الخروج"

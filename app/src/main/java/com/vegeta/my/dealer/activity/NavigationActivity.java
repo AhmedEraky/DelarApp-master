@@ -31,6 +31,7 @@ import com.vegeta.my.dealer.R;
 import com.vegeta.my.dealer.fragment.upload.ServiceProviderUploadImageFragment;
 import com.vegeta.my.dealer.fragment.user.CategoryFragment;
 import com.vegeta.my.dealer.fragment.upload.ServiceProviderFragment;
+import com.vegeta.my.dealer.fragment.user.MyChatFragment;
 import com.vegeta.my.dealer.fragment.user.ProductsFragment;
 import com.vegeta.my.dealer.fragment.user.ProfileFragment;
 import com.vegeta.my.dealer.model.login.LoginResponse;
@@ -52,7 +53,7 @@ public class NavigationActivity extends AppCompatActivity {
     private static final String TAG_HOME = "home";
     private static final String TAG_SERVICE_PROVIDER = "login";
     private static final String TAG_PROFILE = "profile";
-
+    private static final String TAG_Msg = "chat";
     public static int CurrentProcuct;
 
     private static final String TAG_LONOUT = "logout";
@@ -222,6 +223,9 @@ public class NavigationActivity extends AppCompatActivity {
             case 2:
                 ProfileFragment profileFragment=new ProfileFragment();
                 return profileFragment;
+            case 3:
+                MyChatFragment chatFragment=new MyChatFragment();
+                return chatFragment;
             default:
                 return new CategoryFragment() ;
         }
@@ -270,6 +274,10 @@ public class NavigationActivity extends AppCompatActivity {
                         navItemIndex=2;
                         CURRENT_TAG=TAG_PROFILE;
                         break;
+                    case R.id.nav_msg:
+                        navItemIndex=3;
+                        CURRENT_TAG=TAG_Msg;
+                        break;
                     default:
                         navItemIndex = 0;
                 }
@@ -299,6 +307,8 @@ public class NavigationActivity extends AppCompatActivity {
             navMenu.findItem(R.id.nav_login).setVisible(true);
             navMenu.findItem(R.id.nav_add_service).setVisible(false);
             navMenu.findItem(R.id.nav_profile).setVisible(false);
+            navMenu.findItem(R.id.nav_msg).setVisible(false);
+
 
         }
         else{
@@ -306,7 +316,7 @@ public class NavigationActivity extends AppCompatActivity {
             navMenu.findItem(R.id.nav_login).setVisible(false);
             navMenu.findItem(R.id.nav_add_service).setVisible(true);
             navMenu.findItem(R.id.nav_profile).setVisible(true);
-
+            navMenu.findItem(R.id.nav_msg).setVisible(true);
         }
     }
 

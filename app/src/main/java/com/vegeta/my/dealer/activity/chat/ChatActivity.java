@@ -18,6 +18,7 @@ import com.vegeta.my.dealer.activity.SplashActivity;
 import com.vegeta.my.dealer.adapter.chat.ChatFirebaseAdapter;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.model.chat.ChatModel;
+import com.vegeta.my.dealer.model.chat.UserChat;
 import com.vegeta.my.dealer.model.login.LoginResponse;
 import java.util.Calendar;
 
@@ -75,6 +76,8 @@ public class ChatActivity extends AppCompatActivity implements  View.OnClickList
     private void sendMessageFirebase(){
         ChatModel model = new ChatModel(userModel,edMessage.getText().toString(), Calendar.getInstance().getTime().getTime()+"");
         mFirebaseDatabaseReference.child(CHAT_REFERENCE).push().setValue(model);
+        UserChat chat =new UserChat();
+        mFirebaseDatabaseReference.child(SplashActivity.userInfo.getId()).push().setValue(chat);
         edMessage.setText(null);
     }
 

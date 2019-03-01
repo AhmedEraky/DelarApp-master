@@ -104,6 +104,8 @@ public class ProductDetailsFragment extends FragmentParent {
             Bundle bundle = new Bundle();
             bundle.putInt("id", product.getId());
             bundle.putString("name",product.getName());
+            bundle.putString("productUser",product.getUsername());
+
             chatFragment.setArguments(bundle);
             getFragmentManager().beginTransaction().add( R.id.frame
                     ,chatFragment )

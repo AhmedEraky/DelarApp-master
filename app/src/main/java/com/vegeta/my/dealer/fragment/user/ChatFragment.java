@@ -21,6 +21,7 @@ import com.vegeta.my.dealer.activity.SplashActivity;
 import com.vegeta.my.dealer.adapter.chat.ChatFirebaseAdapter;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.model.chat.ChatModel;
+import com.vegeta.my.dealer.model.chat.UserChat;
 import com.vegeta.my.dealer.model.login.LoginResponse;
 
 import java.util.Calendar;
@@ -39,6 +40,7 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
     private ImageView btSendMessage;
     private EditText edMessage;
     NetworkConnection networkConnection;
+    String productUserID;
 
 
     public ChatFragment() {
@@ -83,6 +85,15 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
     private void sendMessageFirebase(){
         ChatModel model = new ChatModel(userModel,edMessage.getText().toString(), Calendar.getInstance().getTime().getTime()+"");
         mFirebaseDatabaseReference.child(CHAT_REFERENCE).push().setValue(model);
+        UserChat chat =new UserChat();
+
+        UserChat userChat=new UserChat();
+        userChat.setProductName(productName);
+        userChat.setProductUser(productUserID);
+        userChat.setProductID(productID);
+        mFirebaseDatabaseReference.child(SplashActivity.userInfo.getId()).child(CHAT_REFERENCE).setValue(userChat);
+        mFirebaseDatabaseReference.child(productUserID).child(CHAT_REFERENCE).setValue(userChat);
+
         edMessage.setText(null);
     }
 
@@ -129,22 +140,26 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
         rvListMessage = view.findViewById(R.id.messageRecyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this.getContext());
         mLinearLayoutManager.setStackFromEnd(true);
-       try {
-           makeNavigation(productName);
+        try {
+            makeNavigation(productName);
 
-       }catch (Exception e){
+        }catch (Exception e){
 
-       }
+        }
 
     }
 
     public void getData() {
         bundle=this.getArguments();
         if(bundle!=null) {
-            productID=bundle.getInt("id");
-            productName=bundle.getString("name");
-            CHAT_REFERENCE = "HDaPJGgS-d9KZ940DiBiB7yQr9CwUSeQ647X9Wsr0OMcoe5eCl3jQSkssrHMa89J8yQEK38MD_4192pidnQ9Tp5IyallHbXpyUkZSGFD9CX1z87LOSWG4iMTnIF6908HmwsVmld2KhqOSQh9vuEN1Kde7xbiOhQ8HOfnr1a2wUHxvmxW8tqpvfkkZFW2yJgI6StPdEcRmmqkBGDO60fJ9vqkN56Yka3IkYEfTqFNhe0WLJXq59kkLEHueQe6hSQyMK1Mwi2SOAatu-UYW4Pdge7AVIlb-QAyf_9rRnQSTjLrlZA50T-l36xafss3BR2Kr8ap3TThzhK95-8drj4uYWL_zFT2wjhQGYFXGgtuSCsWAU89NQcCdi03WTuE40hdt-ojThGuioXbZSAu-rFfKgyWEGW687U99b8D41MQ9ztVaWssW4ph7iV6WzEICEYldxxojrOyH_DOu84JWyclIHtFgXVqhGLgUV6tjenLzEUEoXnQmwLvQXnA57N9R_JYvqW-V5chqk3OQSvq5HKPeA"+productName+productID;
+            productID = bundle.getInt("id");
+            productName = bundle.getString("name");
+            productUserID=bundle.getString("productUser");
 
+            if (bundle.containsKey("chatID"))
+                CHAT_REFERENCE=bundle.getString("chatID");
+            else
+                CHAT_REFERENCE = SplashActivity.userInfo.getId()+productID;
         }
     }
 
