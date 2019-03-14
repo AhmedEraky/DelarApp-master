@@ -28,29 +28,29 @@ public class CategoryFragment extends FragmentParent implements
 
     private void setData() {
         categories=new ArrayList<>();
-        Category category=new Category(1,"ماركت",R.drawable.market);
+        Category category=new Category(1,"ماركت", R.drawable.market);
         categories.add(category);
-        category=new Category(2,"كافيهات",R.drawable.caffee);
+        category=new Category(2,"كافيهات", R.drawable.caffee);
         categories.add(category);
-        category=new Category(3,"مطاعم",R.drawable.restaurant);
+        category=new Category(3,"مطاعم", R.drawable.restaurant);
         categories.add(category);
-        category=new Category(4,"توصيله",R.drawable.twsila);
+        category=new Category(4,"محلات ملابس", R.drawable.twsila);
         categories.add(category);
-        category=new Category(5,"عيادات",R.drawable.clinic);
+        category=new Category(5,"خدمات طبيه", R.drawable.clinic);
         categories.add(category);
-        category=new Category(6,"مستشفيات",R.drawable.hospital);
+        category=new Category(6,"مستشفيات", R.drawable.hospital);
         categories.add(category);
-        category=new Category(7,"معارض",R.drawable.m3ard);
+        category=new Category(7,"معارض", R.drawable.m3ard);
         categories.add(category);
-        category=new Category(8,"موبايلات",R.drawable.mobiles);
+        category=new Category(8,"موبايلات", R.drawable.mobiles);
         categories.add(category);
-        category=new Category(9,"مشاوير",R.drawable.m4awir);
+        category=new Category(9,"مشاوير", R.drawable.m4awir);
         categories.add(category);
-        category=new Category(10,"خدمات اخري",R.drawable.otherservices);
+        category=new Category(10,"خدمات اخري", R.drawable.otherservices);
         categories.add(category);
-        category=new Category(11,"مكتبات",R.drawable.library);
+        category=new Category(11,"خدمات تعليميه", R.drawable.library);
         categories.add(category);
-        category=new Category(12,"قاعات",R.drawable.qa3at);
+        category=new Category(12,"قاعات", R.drawable.qa3at);
         categories.add(category);
     }
     private void setRecycleContent() {

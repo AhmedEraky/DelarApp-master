@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.fragment.upload.CategorySelectionFragment;
 import com.vegeta.my.dealer.fragment.upload.ServiceProviderUploadImageFragment;
 import com.vegeta.my.dealer.fragment.user.CategoryFragment;
 import com.vegeta.my.dealer.fragment.upload.ServiceProviderFragment;
@@ -217,7 +218,7 @@ public class NavigationActivity extends AppCompatActivity {
                 return homeFragment;
             case 1:
                 //todo change image and upload
-                ServiceProviderFragment serviceProviderFragment=new ServiceProviderFragment();
+                CategorySelectionFragment serviceProviderFragment=new CategorySelectionFragment();
                 //ServiceProviderUploadImageFragment serviceProviderFragment=new ServiceProviderUploadImageFragment();
                 return serviceProviderFragment;
             case 2:

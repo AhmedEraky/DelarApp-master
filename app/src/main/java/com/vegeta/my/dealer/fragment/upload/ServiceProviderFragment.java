@@ -20,8 +20,10 @@ public class ServiceProviderFragment extends FragmentParent {
 
 
     EditText eName,eAddress,eMobile,ePhone;
-    Button bNext;
+    Button bNext,previous;
     ProductAddBody body;
+    EditText productDetails;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,19 +55,35 @@ public class ServiceProviderFragment extends FragmentParent {
 
             if(valid){
                 ServiceProviderFragment2 serviceProviderFragment2=new ServiceProviderFragment2();
-                Bundle bundle = new Bundle();
-                body=new ProductAddBody();
+                bundle=this.getArguments();
+                body= bundle.getParcelable("body");
                 body.setName(eName.getText().toString());
                 body.setAddress(eName.getText().toString());
                 body.setPhoneNo(ePhone.getText().toString());
                 body.setMobileNo(eMobile.getText().toString());
+                body.setMoreInformation(productDetails.getText().toString());
                 bundle.putParcelable("body",body);
-                serviceProviderFragment2.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace( R.id.frame
-                        ,serviceProviderFragment2)
-                        .addToBackStack( null ).commit();
+                if(body.getId()==6){
+                    ServiceProviderFragmentHospital serviceProviderFragmentHospital=new ServiceProviderFragmentHospital();
+                    serviceProviderFragmentHospital.setArguments(bundle);
+                    getFragmentManager().beginTransaction().replace(R.id.frame
+                            , serviceProviderFragmentHospital)
+                            .addToBackStack(null).commit();
+
+                }
+                else {
+                    UploadDataFragment uploadDataFragment = new UploadDataFragment();
+                    uploadDataFragment.setArguments(bundle);
+                    getFragmentManager().beginTransaction().replace(R.id.frame
+                            , uploadDataFragment)
+                            .addToBackStack(null).commit();
+                }
             }
 
+        });
+        previous.setOnClickListener(view1 -> {
+            //todo backbutton press
+            getFragmentManager().popBackStack();
         });
     }
 
@@ -88,6 +106,8 @@ public class ServiceProviderFragment extends FragmentParent {
         eMobile=view.findViewById(R.id.service_provider_etxt_place_mobile);
         ePhone=view.findViewById(R.id.service_provider_etxt_place_phone);
         bNext=view.findViewById(R.id.service_provider_next);
+        productDetails=view.findViewById(R.id.service_provider_etxt_description);
+        previous=view.findViewById(R.id.service_provider2_previous);
 
     }
 

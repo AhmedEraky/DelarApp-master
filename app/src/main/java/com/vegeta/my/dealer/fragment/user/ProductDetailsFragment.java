@@ -248,8 +248,6 @@ public class ProductDetailsFragment extends FragmentParent {
         specialistList=view.findViewById(R.id.product_details_list_specialist);
         spechialistLayout=view.findViewById(R.id.product_details_layout_specialist);
         clincSpechislidt=view.findViewById(R.id.product_details_txt_clinic_specialist);
-        menuList=view.findViewById(R.id.product_details_list_menu);
-        txtMenuTitle=view.findViewById(R.id.product_details_txt_menu);
     }
 
 

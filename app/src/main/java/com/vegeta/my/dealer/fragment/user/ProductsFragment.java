@@ -105,10 +105,10 @@ public class ProductsFragment extends FragmentParent implements
                         makeNavigation("مطاعم");
                         break;
                     case 4:
-                        makeNavigation("توصيله");
+                        makeNavigation("محلات ملابس");
                         break;
                     case 5:
-                        makeNavigation("عيادات");
+                        makeNavigation("خدمات طبيه");
                         break;
                     case 6:
                         makeNavigation("مستشفيات");
@@ -126,7 +126,7 @@ public class ProductsFragment extends FragmentParent implements
                         makeNavigation("خدمات اخري");
                         break;
                     case 11:
-                        makeNavigation("مكتبات");
+                        makeNavigation("خدمات تعليميه");
                         break;
                     case 12:
                         makeNavigation("قاعات");
@@ -147,10 +147,10 @@ public class ProductsFragment extends FragmentParent implements
                         makeNavigation("مطاعم");
                         break;
                     case 4:
-                        makeNavigation("توصيله");
+                        makeNavigation("محلات ملابس");
                         break;
                     case 5:
-                        makeNavigation("عيادات");
+                        makeNavigation("خدمات طبيه");
                         break;
                     case 6:
                         makeNavigation("مستشفيات");
@@ -168,7 +168,7 @@ public class ProductsFragment extends FragmentParent implements
                         makeNavigation("خدمات اخري");
                         break;
                     case 11:
-                        makeNavigation("مكتبات");
+                        makeNavigation("خدمات تعليميه");
                         break;
                     case 12:
                         makeNavigation("قاعات");

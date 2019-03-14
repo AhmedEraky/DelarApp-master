@@ -3,8 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="@dimen/_15sdp"
     android:gravity="center"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -14,5 +15,15 @@
        android:id="@+id/nav_header_logo"
        android:layout_marginTop="@dimen/_15sdp"
        android:src="@drawable/profie_pic"/>
+
+   <TextView
+       android:layout_marginTop="@dimen/_10sdp"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_40sdp"
+       android:gravity="center"
+       android:text="اسم المستخدم"
+       android:layout_marginBottom="@dimen/_10sdp"
+       android:fontFamily="@font/cairo_semibold"
+       android:background="#f00"/>
 
 </LinearLayout>

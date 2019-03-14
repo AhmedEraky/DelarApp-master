@@ -1,14 +1,11 @@
 package com.vegeta.my.dealer.fragment.upload;
 
-import android.app.Activity;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +29,7 @@ import okhttp3.RequestBody;
 
 import static android.app.Activity.RESULT_OK;
 
-public class ServiceProviderUploadImageFragment extends FragmentParent implements UploadImage{
+public class ServiceProviderUploadImageFragment extends FragmentParent implements UploadImage {
     public static int ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE=5469;
     private final int PICK_IMAGE_REQUEST=71;
     public MultipartBody.Part body;

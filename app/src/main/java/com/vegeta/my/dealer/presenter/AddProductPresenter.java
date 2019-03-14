@@ -73,8 +73,8 @@ public class AddProductPresenter {
 
                 break;
             case 4:/*
-                activityTitle.setText("توصيله");*/
-                call = service.AddQuickLiftDriverData(map);
+                activityTitle.setText("محلات ملابس");*/
+                call = service.AddClothesShopData(map);
 
                 break;
             case 5:

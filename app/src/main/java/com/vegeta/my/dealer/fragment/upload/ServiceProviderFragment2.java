@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.vegeta.my.dealer.R;
-import com.vegeta.my.dealer.api.retrofitinterface.UploadImage;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
 import com.vegeta.my.dealer.model.product.ProductAddBody;
 
@@ -48,13 +47,13 @@ public class ServiceProviderFragment2 extends FragmentParent {
         categories.add("ماركت");
         categories.add("كافيهات");
         categories.add("مطاعم");
-        categories.add("توصيله");
-        categories.add("عيادات");
+        categories.add("محلات ملابس");
+        categories.add("خدمات طبيه");
         categories.add("مستشفيات");
         categories.add("معارض");
         categories.add("موبايلات");
         categories.add("مشاوير");
-        categories.add("مكتبات");
+        categories.add("خدمات تعليميه");
         categories.add("قاعات");
         categories.add("خدمات اخري");
 

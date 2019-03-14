@@ -123,24 +123,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/product_details_txt_menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="قائمة الطعام"
-                android:textAlignment="center"
-                android:fontFamily="@font/cairo_semibold"
-                android:textSize="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                />
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/product_details_list_menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                ></android.support.v7.widget.RecyclerView>
-            <TextView
                 android:id="@+id/product_details_txt_img"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="match_parent"

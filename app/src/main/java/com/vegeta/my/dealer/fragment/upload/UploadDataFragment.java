@@ -17,7 +17,7 @@ import com.vegeta.my.dealer.model.product.Location;
 import com.vegeta.my.dealer.model.product.ProductAddBody;
 import com.vegeta.my.dealer.presenter.AddProductPresenter;
 
-public class UploadDataFragment extends FragmentParent implements AddProductInterface{
+public class UploadDataFragment extends FragmentParent implements AddProductInterface {
 
 
 

@@ -50,8 +50,8 @@ public class ProductPresenter {
 
                 break;
             case 4:/*
-                activityTitle.setText("توصيله");*/
-                call = service.getQuickLiftDriverData();
+                activityTitle.setText("محل ملابس");*/
+                call = service.getClothesShopData();
 
                 break;
             case 5:
@@ -92,17 +92,17 @@ public class ProductPresenter {
                 call = service.getHallData();
                 break;
         }
-            call.enqueue(new Callback<ArrayList<Product>>() {
-                @Override
-                public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
-                    productInterface.getProductData(response.body());
-                }
+        call.enqueue(new Callback<ArrayList<Product>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
+                productInterface.getProductData(response.body());
+            }
 
-                @Override
-                public void onFailure(Call<ArrayList<Product>> call, Throwable t) {
-                    productInterface.error(context.getString(R.string.response_fail));
-                }
-            });
+            @Override
+            public void onFailure(Call<ArrayList<Product>> call, Throwable t) {
+                productInterface.error(context.getString(R.string.response_fail));
+            }
+        });
 
-        }
     }
+}
