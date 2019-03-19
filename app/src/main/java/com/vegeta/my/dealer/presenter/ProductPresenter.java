@@ -31,7 +31,7 @@ public class ProductPresenter {
     public void getProductData(int id){
 
         Service service= Client.getClient().create(Service.class);
-        Call<ArrayList<Product>> call;
+        Call<ArrayList<Product>> call=null;
         switch (id) {
             case 1:/*
                 activityTitle.setText("ماركت");*/
@@ -76,7 +76,7 @@ public class ProductPresenter {
                 break;
             case 9:
 //                activityTitle.setText("مشاوير");
-                call = service.getJourneyDriverData();
+               // call = service.getJourneyDriverData();
 
                 break;
             case 10:

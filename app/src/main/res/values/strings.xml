@@ -49,7 +49,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
 
-
+    <string name="google_map_key">AIzaSyDtj9ufyCLXuGexhISJSzkRxgaID-uOVWM</string>
     <string name="facebook_app_id">2041244422842026</string>
     <string name="fb_login_protocol_scheme">fb2041244422842026</string>
 

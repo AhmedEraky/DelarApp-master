@@ -1,6 +1,10 @@
 package com.vegeta.my.dealer.fragment.upload;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,16 +80,37 @@ public class UploadDataFragment extends FragmentParent implements AddProductInte
         });
 
     }
+    public void open(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+        alertDialogBuilder.setMessage("شكرا لتعاونك معنا لتفعيل الخدمه تواصل معنا\n" +
+                "admin@thedelar.com \n" +
+                "01091767746");
+        alertDialogBuilder.setPositiveButton("تواصل بالهاتف الان",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:"+"01091767746"));
+                        startActivity(intent);
+                    }
+                });
+        alertDialogBuilder.setNegativeButton("تواصل في وقت لاحق",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
 
     @Override
     public void AddNewProduct(AddResponse response) {
-        Toast.makeText(getContext(), "تم اضافة المنتج", Toast.LENGTH_SHORT).show();
+        open();
     }
 
     @Override
     public void error(String errorMsg) {
         Toast.makeText(getContext(), errorMsg, Toast.LENGTH_SHORT).show();
-
-
     }
 }

@@ -29,14 +29,12 @@ import android.widget.Toast;
 import com.facebook.login.LoginManager;
 import com.vegeta.my.dealer.R;
 import com.vegeta.my.dealer.fragment.upload.CategorySelectionFragment;
-import com.vegeta.my.dealer.fragment.upload.ServiceProviderUploadImageFragment;
+import com.vegeta.my.dealer.fragment.upload.LocationFragment;
 import com.vegeta.my.dealer.fragment.user.CategoryFragment;
-import com.vegeta.my.dealer.fragment.upload.ServiceProviderFragment;
 import com.vegeta.my.dealer.fragment.user.MyChatFragment;
 import com.vegeta.my.dealer.fragment.user.ProductsFragment;
 import com.vegeta.my.dealer.fragment.user.ProfileFragment;
 import com.vegeta.my.dealer.model.login.LoginResponse;
-import com.vegeta.my.dealer.model.profile.Profile;
 
 
 public class NavigationActivity extends AppCompatActivity {
@@ -218,7 +216,8 @@ public class NavigationActivity extends AppCompatActivity {
                 return homeFragment;
             case 1:
                 //todo change image and upload
-                CategorySelectionFragment serviceProviderFragment=new CategorySelectionFragment();
+                //CategorySelectionFragment serviceProviderFragment=new CategorySelectionFragment();
+                LocationFragment serviceProviderFragment=new LocationFragment();
                 //ServiceProviderUploadImageFragment serviceProviderFragment=new ServiceProviderUploadImageFragment();
                 return serviceProviderFragment;
             case 2:

@@ -200,18 +200,6 @@ public class ProductDetailsFragment extends FragmentParent {
         }
 
 
-        //menu part
-        if(id==2){
-            if(product.getCafeMenus()!=null&&product.getCafeMenus().size()>0){
-                CafeMenuAdapter adapter=new CafeMenuAdapter(this.getContext(),product.getCafeMenus());
-                GridLayoutManager gridLayoutManager=new GridLayoutManager(this.getContext(),2);
-                menuList.setLayoutManager(gridLayoutManager);
-                txtMenuTitle.setVisibility(View.VISIBLE);
-                menuList.setAdapter(adapter);}
-            else
-                txtMenuTitle.setVisibility(View.GONE);
-
-        }
 
 
     }

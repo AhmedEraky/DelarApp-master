@@ -66,7 +66,13 @@ public class CategoryFragment extends FragmentParent implements
     @Override
     public void openCategoryItmes(int id) {
         //todo open categoryItem
-        ProductsFragment productsFragment=new ProductsFragment();
+        FragmentParent productsFragment=null;
+        if(id==9){
+             productsFragment=new DriverFragment();
+
+        }else {
+            productsFragment = new ProductsFragment();
+        }
         Bundle bundle = new Bundle();
         bundle.putInt("category", id);
         NavigationActivity.CurrentProcuct=id;

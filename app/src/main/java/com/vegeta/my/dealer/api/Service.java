@@ -5,6 +5,7 @@ import com.vegeta.my.dealer.model.login.LoginResponse;
 import com.vegeta.my.dealer.model.login.RegisterExternalModel;
 import com.vegeta.my.dealer.model.login.UserInfoResponse;
 import com.vegeta.my.dealer.model.product.Product;
+import com.vegeta.my.dealer.model.product.ProductDriver;
 import com.vegeta.my.dealer.model.product.ProductResponse;
 import com.vegeta.my.dealer.model.product.Specialist;
 import com.vegeta.my.dealer.model.product.UploadImageResponse;
@@ -60,7 +61,7 @@ public interface Service {
 
 
     @GET("api/journeyDriver")
-    Call<ArrayList<Product>>  getJourneyDriverData();
+    Call<ArrayList<ProductDriver>>  getJourneyDriverData();
 
     @GET("api/labCenter")
     Call<ArrayList<Product>>  getLabCenterData();
