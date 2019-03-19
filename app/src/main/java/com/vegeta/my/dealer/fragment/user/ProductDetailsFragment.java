@@ -8,6 +8,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,9 +83,12 @@ public class ProductDetailsFragment extends FragmentParent {
 
     private void setOnClick() {
         locationImage.setOnClickListener(v->{
-            String uri = String.format(Locale.ENGLISH, "geo:%f,%f", product.getLocation().getLatitude(), product.getLocation().getLongitude());
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-            this.startActivity(intent);
+            String head="الموقع";
+            String geoUriString="geo:"+product.getLocation().getLatitude()+","+product.getLocation().getLongitude()+"?q=("+head+")@"+product.getLocation().getLatitude()+","+product.getLocation().getLongitude();
+            Uri geoUri = Uri.parse(geoUriString);
+            Intent mapCall  = new Intent(Intent.ACTION_VIEW, geoUri);
+            startActivity(mapCall);
+
         });
 
         if(id==6||id==5) {
