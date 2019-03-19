@@ -216,8 +216,8 @@ public class NavigationActivity extends AppCompatActivity {
                 return homeFragment;
             case 1:
                 //todo change image and upload
-                //CategorySelectionFragment serviceProviderFragment=new CategorySelectionFragment();
-                LocationFragment serviceProviderFragment=new LocationFragment();
+                CategorySelectionFragment serviceProviderFragment=new CategorySelectionFragment();
+                //LocationFragment serviceProviderFragment=new LocationFragment();
                 //ServiceProviderUploadImageFragment serviceProviderFragment=new ServiceProviderUploadImageFragment();
                 return serviceProviderFragment;
             case 2:

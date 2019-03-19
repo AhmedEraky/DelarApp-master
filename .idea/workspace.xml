@@ -17,33 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8865e166-c851-4dc9-873e-8bc0b1894e3b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/api/Service.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/api/Service.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/upload/UploadDataFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/upload/UploadDataFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/user/CategoryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/user/CategoryFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/user/ProductDetailsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/user/ProductDetailsFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/presenter/ProductPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/presenter/ProductPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_design.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_design.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_chat.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_chat.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -195,7 +169,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_drive.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item_drive.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_drive.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -208,6 +182,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="NavigationActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="216" column="19" lean-forward="true" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DriverPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/presenter/DriverPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -216,16 +200,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/upload/LocationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -2418,7 +2392,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_location.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/upload/LocationFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/drive_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/fragment/user/MyChatFragment.java" />
@@ -2437,6 +2410,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/adapter/product/DriverAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_driver.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_drive.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java" />
       </list>
     </option>
   </component>
@@ -2489,30 +2463,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="dealer" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DelarApp-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="dealer" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="retrofitinterface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DelarApp-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="dealer" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DelarApp-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="dealer" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DelarApp-master" type="1abcf292:AndroidViewProjectNode" />
@@ -2610,7 +2561,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Google-Maps-Google-Places" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1551447337547" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552992092596" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552992242033" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -3714,14 +3665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="218" column="18" lean-forward="false" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_location.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -4023,6 +3966,14 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vegeta/my/dealer/activity/NavigationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="216" column="19" lean-forward="true" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
