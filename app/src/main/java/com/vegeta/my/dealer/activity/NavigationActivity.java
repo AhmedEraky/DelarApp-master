@@ -38,23 +38,19 @@ import com.vegeta.my.dealer.model.login.LoginResponse;
 
 
 public class NavigationActivity extends AppCompatActivity {
-
     public static RelativeLayout ToolbarColor;
-
     private NavigationView navigationView;
     static Menu navMenu;
     private DrawerLayout drawer;
     private View navHeader;
     private ImageView imgNavHeaderBg, imgProfile;
     public static TextView texttitle;
-
     public static int navItemIndex = 0;
     private static final String TAG_HOME = "home";
     private static final String TAG_SERVICE_PROVIDER = "login";
     private static final String TAG_PROFILE = "profile";
     private static final String TAG_Msg = "chat";
     public static int CurrentProcuct;
-
     private static final String TAG_LONOUT = "logout";
     public static String CURRENT_TAG = TAG_HOME;
     private boolean shouldLoadHomeFragOnBackPress = true;
@@ -79,7 +75,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         changeMenu();
 
-        //header Part user mail and image
+        // header Part user mail and image
         navHeader=navigationView.getHeaderView(0);
         imgNavHeaderBg=navHeader.findViewById(R.id.nav_header_logo);
 
@@ -196,7 +192,7 @@ public class NavigationActivity extends AppCompatActivity {
         // show or hide the fab button
         //toggleFab();
 
-        //Closing drawer on item click
+        // Closing drawer on item click
         drawer.closeDrawers();
 
         // refresh toolbar menu

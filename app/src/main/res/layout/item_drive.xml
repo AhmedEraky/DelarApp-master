@@ -63,7 +63,9 @@
                     android:fontFamily="@font/cairo_semibold"
                     android:textSize="@dimen/_10sdp"
                     android:layout_below="@id/driver_name"
-                    android:text="4 seet"/>
+                    android:textAlignment="gravity"
+                    android:text="4 alsop7"
+                    android:gravity="left"/>
                 <RatingBar
                     android:id="@+id/driver_rating"
                     style="?android:attr/ratingBarStyleSmall"
@@ -76,6 +78,19 @@
                     android:layout_below="@id/driver_car"
                     android:layout_toLeftOf="@id/driver_img"
                     android:theme="@style/RatingBar" />
+                <TextView
+                    android:id="@+id/driver_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/driver_rating"
+                    android:layout_below="@id/driver_seat"
+                    android:text="4 الصبح "
+                    android:fontFamily="@font/cairo_semibold"
+                    android:layout_alignParentLeft="true"
+                    android:textAlignment="gravity"
+                    android:gravity="left"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"/>
             </RelativeLayout>
 
             <RelativeLayout

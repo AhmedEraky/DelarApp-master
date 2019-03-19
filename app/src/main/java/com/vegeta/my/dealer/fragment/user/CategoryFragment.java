@@ -72,10 +72,10 @@ public class CategoryFragment extends FragmentParent implements
 
         }else {
             productsFragment = new ProductsFragment();
+            NavigationActivity.CurrentProcuct=id;
         }
         Bundle bundle = new Bundle();
         bundle.putInt("category", id);
-        NavigationActivity.CurrentProcuct=id;
         productsFragment.setArguments(bundle);
         getFragmentManager().beginTransaction().replace( R.id.frame
                 ,productsFragment ,"product_fragment")

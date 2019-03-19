@@ -27,6 +27,8 @@ import com.vegeta.my.dealer.adapter.product.CafeMenuAdapter;
 import com.vegeta.my.dealer.adapter.product.SpechialistAdapter;
 import com.vegeta.my.dealer.model.login.LoginResponse;
 import com.vegeta.my.dealer.model.product.Product;
+import com.vegeta.my.dealer.model.product.ProductDriver;
+import com.vegeta.my.dealer.view.DriverClick;
 
 import java.util.ArrayList;
 import java.util.Locale;

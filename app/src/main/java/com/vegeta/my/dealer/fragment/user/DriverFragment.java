@@ -17,10 +17,11 @@ import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.retrofitinterface.DriverInterface;
 import com.vegeta.my.dealer.model.product.ProductDriver;
 import com.vegeta.my.dealer.presenter.DriverPresenter;
+import com.vegeta.my.dealer.view.DriverClick;
 
 import java.util.ArrayList;
 
-public class DriverFragment extends FragmentParent implements DriverInterface {
+public class DriverFragment extends FragmentParent implements DriverInterface,DriverClick {
     RecyclerView recyclerView;
     ArrayList<ProductDriver> products;
     NetworkConnection networkConnection;
@@ -94,7 +95,7 @@ public class DriverFragment extends FragmentParent implements DriverInterface {
     }
 
     private void setRecycleContent() {
-        productsAdapter = new DriverAdapter(this.getContext(), products);
+        productsAdapter = new DriverAdapter(this.getContext(), products,this);
         recyclerView.setAdapter(productsAdapter);
     }
 
@@ -104,5 +105,19 @@ public class DriverFragment extends FragmentParent implements DriverInterface {
     public void error(String error) {
         Toast.makeText(this.getContext(), error, Toast.LENGTH_SHORT).show();
 
+    }
+
+
+    @Override
+    public void openChat(ProductDriver productDriver) {
+        ChatFragment chatFragment=new ChatFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",productDriver.id);
+        bundle.putString("name",productDriver.journeyDriver.name);
+        bundle.putString("productUser",productDriver.journeyDriver.id);
+        chatFragment.setArguments(bundle);
+        getFragmentManager().beginTransaction().replace( R.id.frame
+                ,chatFragment ,"product_fragment")
+                .addToBackStack("home").commit();
     }
 }
