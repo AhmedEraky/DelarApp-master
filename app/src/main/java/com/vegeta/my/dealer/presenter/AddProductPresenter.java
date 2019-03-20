@@ -52,7 +52,6 @@ public class AddProductPresenter {
             map.put("Specialist", body.getSpecialist());
         }
         Service service = Client.getClient().create( Service.class );
-        System.out.println("hert");
         Call<AddResponse> call;
 
         switch (body.getId()) {

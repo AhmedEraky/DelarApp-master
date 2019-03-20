@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client {
 
-    public static String baseUrl="http://huseein99-001-site1.dtempurl.com/";
+    public static String baseUrl="http://thedelar.com/";
     public  static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
@@ -51,4 +51,5 @@ public class Client {
 
         return retrofit;
     }
+
 }

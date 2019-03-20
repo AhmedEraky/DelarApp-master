@@ -76,13 +76,21 @@ public class CategorySelectionFragment extends FragmentParent {
                 body.setId(12);
             }
 
-            ServiceProviderFragment uploadDataFragment = new ServiceProviderFragment();
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("body", body);
-            uploadDataFragment.setArguments(bundle);
-            getFragmentManager().beginTransaction().replace(R.id.frame
-                    , uploadDataFragment)
-                    .addToBackStack(null).commit();
+            if(body.getId()!=9){
+                ServiceProviderFragment uploadDataFragment = new ServiceProviderFragment();
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("body", body);
+                uploadDataFragment.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.frame
+                        , uploadDataFragment)
+                        .addToBackStack(null).commit();
+
+            }else {
+                ServiceCarFragment uploadDataFragment = new ServiceCarFragment();
+                getFragmentManager().beginTransaction().replace(R.id.frame
+                        , uploadDataFragment)
+                        .addToBackStack(null).commit();
+            }
 
 
 

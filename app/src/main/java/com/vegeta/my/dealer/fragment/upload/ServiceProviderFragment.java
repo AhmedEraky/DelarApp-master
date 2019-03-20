@@ -35,7 +35,6 @@ public class ServiceProviderFragment extends FragmentParent {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_service, container, false);
         NavigationActivity.ToolbarColor.setBackgroundColor(Color.RED);
-
         setRetainInstance(true);
         findviews();
         setOnClick();
