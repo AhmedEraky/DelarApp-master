@@ -57,6 +57,7 @@ public class NavigationActivity extends AppCompatActivity {
     private Handler mHandler;
     public  Toolbar toolbar;
     private ActionBarDrawerToggle toggle;
+    public static  TextView userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,12 +73,14 @@ public class NavigationActivity extends AppCompatActivity {
         drawer=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
         navMenu=navigationView.getMenu();
-
-        changeMenu();
-
         // header Part user mail and image
         navHeader=navigationView.getHeaderView(0);
         imgNavHeaderBg=navHeader.findViewById(R.id.nav_header_logo);
+        userName=navHeader.findViewById(R.id.user_name);
+
+        changeMenu();
+
+
 
         // initializing navigation menu
         setUpNavigationView();
@@ -314,6 +317,8 @@ public class NavigationActivity extends AppCompatActivity {
             navMenu.findItem(R.id.nav_profile).setVisible(true);
             navMenu.findItem(R.id.nav_msg).setVisible(true);
         }
+
+        userName.setText(SplashActivity.userData.getUserName());
     }
 
     @Override

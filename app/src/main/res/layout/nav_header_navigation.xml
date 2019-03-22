@@ -17,6 +17,7 @@
        android:src="@drawable/profie_pic"/>
 
    <TextView
+       android:id="@+id/user_name"
        android:layout_marginTop="@dimen/_10sdp"
        android:layout_width="match_parent"
        android:layout_height="@dimen/_40sdp"

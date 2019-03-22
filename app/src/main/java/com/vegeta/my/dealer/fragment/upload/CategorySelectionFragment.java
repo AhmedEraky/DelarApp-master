@@ -1,6 +1,9 @@
 package com.vegeta.my.dealer.fragment.upload;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,19 +12,86 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.activity.NavigationActivity;
+import com.vegeta.my.dealer.adapter.category.AddCategoryAdapter;
+import com.vegeta.my.dealer.fragment.user.DriverFragment;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
+import com.vegeta.my.dealer.fragment.user.ProductsFragment;
+import com.vegeta.my.dealer.model.category.Category;
 import com.vegeta.my.dealer.model.product.ProductAddBody;
+import com.vegeta.my.dealer.view.CategoryClick;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategorySelectionFragment extends FragmentParent {
+public class CategorySelectionFragment extends FragmentParent implements
+        CategoryClick {
 
-    Spinner categorySpinner;
-    List<String> categories;
-    Button next,previous;
+
     ProductAddBody body;
 
+
+
+    RecyclerView recyclerView;
+    ArrayList<Category> categories;
+
+    Activity context;
+    private void setData() {
+        categories=new ArrayList<>();
+        Category category=new Category(1,"ماركت", R.drawable.market);
+        categories.add(category);
+        category=new Category(2,"كافيهات", R.drawable.caffee);
+        categories.add(category);
+        category=new Category(3,"مطاعم", R.drawable.restaurant);
+        categories.add(category);
+        category=new Category(4,"محلات ملابس", R.drawable.twsila);
+        categories.add(category);
+        category=new Category(5,"خدمات طبيه", R.drawable.clinic);
+        categories.add(category);
+        category=new Category(6,"مستشفيات", R.drawable.hospital);
+        categories.add(category);
+        category=new Category(7,"معارض", R.drawable.m3ard);
+        categories.add(category);
+        category=new Category(8,"موبايلات", R.drawable.mobiles);
+        categories.add(category);
+        category=new Category(9,"مشاوير", R.drawable.m4awir);
+        categories.add(category);
+         category=new Category(11,"خدمات تعليميه", R.drawable.library);
+        categories.add(category);
+        category=new Category(12,"قاعات", R.drawable.qa3at);
+        categories.add(category);
+        category=new Category(10,"خدمات اخري", R.drawable.otherservices);
+        categories.add(category);
+
+    }
+    private void setRecycleContent() {
+        AddCategoryAdapter categoryAdapter=new AddCategoryAdapter(this.getContext(),categories);
+        categoryAdapter.onClick(this);
+        //GridLayoutManager gridLayoutManager=new GridLayoutManager(this.getContext(),3);
+        LinearLayoutManager gridLayoutManager=new LinearLayoutManager(this.getContext());
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setAdapter(categoryAdapter);
+
+    }
+    @Override
+    public void openCategoryItmes(int id) {
+        body.setId(id);
+        if (body.getId() != 9) {
+            ServiceProviderFragment uploadDataFragment = new ServiceProviderFragment();
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("body", body);
+            uploadDataFragment.setArguments(bundle);
+            getFragmentManager().beginTransaction().replace(R.id.frame
+                    , uploadDataFragment)
+                    .addToBackStack(null).commit();
+
+        } else {
+            ServiceCarFragment uploadDataFragment = new ServiceCarFragment();
+            getFragmentManager().beginTransaction().replace(R.id.frame
+                    , uploadDataFragment)
+                    .addToBackStack(null).commit();
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,106 +99,36 @@ public class CategorySelectionFragment extends FragmentParent {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_category_selection, container, false);
         body=new ProductAddBody();
+        setRetainInstance(true);
+
         findviews();
         setData();
-        setOnClick();
+        setRecycleContent();
+        context=this.getActivity();
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+
         return view;
     }
 
-    private void setOnClick() {
-        next.setOnClickListener(view1 -> {
+    @Override
+    public void onResume() {
+        super.onResume();
+        NavigationActivity.CurrentProcuct=-1;
+        try {
+            makeNavigation("الديلر");
+            NavigationActivity.ToolbarColor.setBackground(getResources().getDrawable(R.drawable.bg));
 
+        }catch (Exception e){
 
-            if(categorySpinner.getSelectedItem().equals("ماركت")){
-                body.setId(1);
-            }
-            else if(categorySpinner.getSelectedItem().equals("كافيهات")){
-                body.setId(2);
-            }
-            else if(categorySpinner.getSelectedItem().equals("مطاعم")){
-                body.setId(3);
-            }
-            else if(categorySpinner.getSelectedItem().equals("محلات ملابس")){
-                body.setId(4);
-            }
-            else if(categorySpinner.getSelectedItem().equals("خدمات طبيه")){
-                body.setId(5);
-            }
-            else if(categorySpinner.getSelectedItem().equals("مستشفيات")){
-                body.setId(6);
-            }
-            else if(categorySpinner.getSelectedItem().equals("معارض")){
-                body.setId(7);
-            }
-            else if(categorySpinner.getSelectedItem().equals("موبيلات")){
-                body.setId(8);
-            }
-            else if(categorySpinner.getSelectedItem().equals("مشاوير")){
-                body.setId(9);
-            }
-            else if(categorySpinner.getSelectedItem().equals("خدمات اخري")){
-                body.setId(10);
-            }
-            else if(categorySpinner.getSelectedItem().equals("خدمات تعليميه")){
-                body.setId(11);
-            }
-            else if(categorySpinner.getSelectedItem().equals("قاعات")){
-                body.setId(12);
-            }
+        }
 
-            if(body.getId()!=9){
-                ServiceProviderFragment uploadDataFragment = new ServiceProviderFragment();
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("body", body);
-                uploadDataFragment.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.frame
-                        , uploadDataFragment)
-                        .addToBackStack(null).commit();
-
-            }else {
-                ServiceCarFragment uploadDataFragment = new ServiceCarFragment();
-                getFragmentManager().beginTransaction().replace(R.id.frame
-                        , uploadDataFragment)
-                        .addToBackStack(null).commit();
-            }
-
-
-
-
-
-        });
-
-        previous.setOnClickListener(view1 -> {
-            //todo backbutton press
-            getFragmentManager().popBackStack();
-        });
 
     }
 
     private void findviews() {
-        categorySpinner=view.findViewById(R.id.category_select_spinner_category);
-        next=view.findViewById(R.id.category_select_next);
-        previous=view.findViewById(R.id.category_select_previous);
-    }
-
-    private void setData() {
-        categories=new ArrayList<>();
-        categories.add("ماركت");
-        categories.add("كافيهات");
-        categories.add("مطاعم");
-        categories.add("محلات ملابس");
-        categories.add("خدمات طبيه");
-        categories.add("مستشفيات");
-        categories.add("معارض");
-        categories.add("موبايلات");
-        categories.add("مشاوير");
-        categories.add("خدمات تعليميه");
-        categories.add("قاعات");
-        categories.add("خدمات اخري");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        categorySpinner.setAdapter(dataAdapter);
+        recyclerView=view.findViewById(R.id.category_Search_list);
 
     }
 }
