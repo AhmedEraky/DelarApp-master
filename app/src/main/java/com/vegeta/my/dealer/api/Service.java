@@ -79,7 +79,7 @@ public interface Service {
     Call<ArrayList<Product>>  getQuickLiftDriverData();
 
 
-    @GET("api/rayCenter")
+    @GET("api/other")
     Call<ArrayList<Product>>  getRayCenterData();
 
     @GET("api/resturant")
@@ -139,7 +139,7 @@ public interface Service {
     Call<AddResponse>  AddQuickLiftDriverData(@Body Map<String,Object> map);
 
 
-    @POST("api/rayCenter")
+    @POST("api/other")
     Call<AddResponse>  AddRayCenterData(@Body Map<String,Object> map);
 
     @POST("api/resturant")
@@ -209,7 +209,7 @@ public interface Service {
     Call<ArrayList<Product>>  getQuickLiftDriverData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/rayCenter")
+    @GET("api/other")
     Call<ArrayList<Product>>  getRayCenterData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
     @GET("api/resturant")

@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vegeta.my.dealer.R;
@@ -33,6 +35,7 @@ public class UploadCarFragment extends FragmentParent implements AddProductInter
     AddDriverPresenter addProductPresenter;
     ProductDriver body;
     Button accept,reject;
+
     NetworkConnection networkConnection;
 
 
@@ -71,8 +74,12 @@ public class UploadCarFragment extends FragmentParent implements AddProductInter
     }
 
     private void findviews() {
+
         accept=view.findViewById(R.id.service_provider3_accept);
         reject=view.findViewById(R.id.service_provider3_reject);
+
+
+
 
     }
 
@@ -89,6 +96,8 @@ public class UploadCarFragment extends FragmentParent implements AddProductInter
         reject.setOnClickListener(view1 -> {
             getActivity().onBackPressed();
         });
+
+
 
     }
 

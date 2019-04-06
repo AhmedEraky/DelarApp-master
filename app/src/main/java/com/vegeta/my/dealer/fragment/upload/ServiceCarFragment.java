@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.vegeta.my.dealer.R;
@@ -28,6 +30,8 @@ public class ServiceCarFragment extends FragmentParent {
     EditText driverName,carName,startPoint,endPoint,carTime,carSeat;
     Button bNext,previous;
     ProductDriver body;
+    ImageView increaseSeats,decreaseSeats;
+    TextView numberOfSeats;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,18 +49,18 @@ public class ServiceCarFragment extends FragmentParent {
         bNext.setOnClickListener(v->{
             AwesomeValidation mAwesomeValidation = new AwesomeValidation(BASIC);
 
-            mAwesomeValidation.addValidation(driverName,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل اسم المكان");
-            mAwesomeValidation.addValidation(carName,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل عنوان المكان");
-            mAwesomeValidation.addValidation(startPoint,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل موبايل المكان");
-            mAwesomeValidation.addValidation(endPoint,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل رقم المكان");
-            mAwesomeValidation.addValidation(carTime,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل رقم المكان");
-            mAwesomeValidation.addValidation(carSeat,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل رقم المكان");
+            mAwesomeValidation.addValidation(driverName,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل اسم السائق");
+            mAwesomeValidation.addValidation(carName,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل موديل السياره");
+            mAwesomeValidation.addValidation(startPoint,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل المكان المتجه منه");
+            mAwesomeValidation.addValidation(endPoint,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل المكان المتجه اليه");
+            mAwesomeValidation.addValidation(carTime,"([ ]*+[0-9\\w]++[ ]*+)+","من فضلك ادخل موعد الرحله");
+
             boolean valid=mAwesomeValidation.validate();
 
             if(valid){
                 ServiceProviderFragment2 serviceProviderFragment2=new ServiceProviderFragment2();
                 body=new ProductDriver();
-                body.numOfSeats=Integer.parseInt(carSeat.getText().toString());
+                body.numOfSeats=Integer.parseInt(numberOfSeats.getText().toString());
                 body.destinationAddress=endPoint.getText().toString();
                 body.sourceAdress=startPoint.getText().toString();
                 body.journeyDriver=new JourneyDriver();
@@ -76,6 +80,18 @@ public class ServiceCarFragment extends FragmentParent {
         previous.setOnClickListener(view1 -> {
             //todo backbutton press
             getFragmentManager().popBackStack();
+        });
+
+        increaseSeats.setOnClickListener(v -> {
+            Integer newNumber= Integer.parseInt(numberOfSeats.getText().toString())+1;
+            numberOfSeats.setText(Integer.toString(newNumber));
+        });
+
+        decreaseSeats.setOnClickListener(v -> {
+            if (!numberOfSeats.getText().toString().equals("0")){
+                Integer newNumber= Integer.parseInt(numberOfSeats.getText().toString())-1;
+                numberOfSeats.setText(Integer.toString(newNumber));
+            }
         });
     }
 
@@ -101,6 +117,10 @@ public class ServiceCarFragment extends FragmentParent {
         carTime=view.findViewById(R.id.upload_driver_time_text);
         bNext=view.findViewById(R.id.service_provider_next);
         previous=view.findViewById(R.id.service_provider2_previous);
+        increaseSeats=view.findViewById(R.id.increaseSeat);
+        decreaseSeats=view.findViewById(R.id.decreaseSeats);
+        numberOfSeats=view.findViewById(R.id.numberOfSeats);
+
 
     }
 

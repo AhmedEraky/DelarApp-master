@@ -107,23 +107,51 @@
                 />
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <RelativeLayout
             android:id="@+id/upload_driver_seat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="عدد المقاعد"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_below="@id/upload_driver_time"
             android:layout_marginTop="@dimen/_10sdp">
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/upload_driver_seat_text"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_alignParentRight="true"
+                android:text="عدد المقاعد"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_centerVertical="true"
+                android:textColor="#000"/>
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/plus"
+                android:id="@+id/increaseSeat"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/increaseSeat"
+                android:text="4"
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:id="@+id/numberOfSeats"/>
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/minus"
+                android:layout_toRightOf="@+id/numberOfSeats"
+                android:id="@+id/decreaseSeats"/>
+
+        </RelativeLayout>
 
 
 
