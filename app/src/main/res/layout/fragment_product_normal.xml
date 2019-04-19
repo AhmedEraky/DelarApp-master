@@ -1,164 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/product_fragment_relative_layout"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eeeeee"
-    android:orientation="vertical"
-    tools:context=".fragment.user.ProductDetailsFragment">
-
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/product_details_scroll_view"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/product_fragment_relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        tools:context=".fragment.user.ProductDetailsFragment">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/product_details_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/product_details_img_main"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/caffee" />
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:orientation="vertical"
-                android:id="@+id/product_details_layout_more_info"
-                >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/product_details_img_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/caffee" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:textColor="#000"
-                    android:text="معلومات عن المكان :"
-                    android:textSize="@dimen/_10sdp"
-                    />
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:id="@+id/product_details_layout_more_info"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:textColor="#000"
+                        android:text="معلومات عن المكان :"
+                        android:textSize="@dimen/_10sdp"
+                        />
+
+                    <TextView
+
+                        android:gravity="right"
+                        android:textAlignment="gravity"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/product_details_txt_more_info"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:textColor="#000"
+                        />
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/phone_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/product_details_txt_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/product_details_img_location"
+                            android:gravity="right"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:textColor="#000"
+                            android:textAlignment="gravity"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:textSize="@dimen/_10sdp"
+                            />
+                        <ImageView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/product_details_img_location"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:src="@drawable/location2"/>
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/phone_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/product_details_img_phone"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="@dimen/_30sdp"
+                            android:src="@drawable/phone2"
+                            />
+
+                        <TextView
+                            android:id="@+id/product_details_txt_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toLeftOf="@id/product_details_img_phone"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:gravity="right"
+                            android:textAlignment="gravity"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
 
                 <TextView
 
-                    android:gravity="right"
-                    android:textAlignment="gravity"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:id="@+id/product_details_txt_img"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/product_details_txt_more_info"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_10sdp"
                     android:fontFamily="@font/cairo_semibold"
                     android:textColor="#000"
-                    />
+                    android:background="#fff"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="صور المكان"/>
+                <com.ryan.rv_gallery.GalleryRecyclerView
+                    android:id="@+id/product_details_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:helper="PagerSnapHelper" />
+
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="right"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/product_details_txt_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@id/product_details_img_location"
-                    android:gravity="right"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:textColor="#000"
-                    android:textAlignment="gravity"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:textSize="@dimen/_10sdp"
-                    />
-                <ImageView
-                    android:layout_centerVertical="true"
-                    android:id="@+id/product_details_img_location"
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:src="@drawable/location2"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="right"
-                android:gravity="center"
-
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/product_details_img_phone"
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_height="@dimen/_30sdp"
-                    android:src="@drawable/phone2"
-                    />
-
-                <TextView
-                    android:id="@+id/product_details_txt_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:layout_toLeftOf="@id/product_details_img_phone"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:gravity="right"
-                    android:textAlignment="gravity"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_10sdp" />
-
-            </RelativeLayout>
-            <TextView
-
-                android:id="@+id/product_details_txt_img"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="match_parent"
-                android:paddingRight="@dimen/_20sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:fontFamily="@font/cairo_semibold"
-                android:textColor="#000"
-                android:background="#fff"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_15sdp"
-                android:text="صور المكان"/>
-            <com.ryan.rv_gallery.GalleryRecyclerView
-                android:id="@+id/product_details_gallery"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
-                app:helper="PagerSnapHelper" />
-
-        </LinearLayout>
 
 
-
-    </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
 
 
 
-    <ImageView
-        android:id="@+id/product_details_img_chat"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:src="@drawable/chating" />
+        <ImageView
+            android:id="@+id/product_details_img_chat"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:src="@drawable/chating" />
 
 
 
-</RelativeLayout>
+    </RelativeLayout>
+    <include layout="@layout/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

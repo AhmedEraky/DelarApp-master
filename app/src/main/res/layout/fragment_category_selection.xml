@@ -7,20 +7,36 @@
     android:background="@drawable/bg"
     tools:context=".fragment.upload.CategorySelectionFragment">
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="أختار نوع الخدمه"
-        android:fontFamily="@font/cairo_semibold"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:textSize="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"/>
+        android:layout_height="match_parent">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="أختار نوع الخدمه"
+            android:fontFamily="@font/cairo_semibold"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/category_Search_list"
-        />
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/category_Search_list"
+                />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <include
+            layout="@layout/ads_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 </LinearLayout>

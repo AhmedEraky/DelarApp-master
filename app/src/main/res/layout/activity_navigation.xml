@@ -1,27 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
+<FrameLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start"
+        >
 
+        <include
+            layout="@layout/app_bar_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="#fff"
+            android:layout_gravity="start">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <include layout="@layout/nav_header_navigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="TooDeepLayout">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/home"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="الصفحه الرئسيه"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_add_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="TooDeepLayout">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_menu_share"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="اضافة خدمه"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="TooDeepLayout">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/logout"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="تسجيل الدخول"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            >
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/user"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="الحساب الشخصي"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="TooDeepLayout">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/mail"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="الرسائل"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/nav_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="TooDeepLayout">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/logout"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="تسجيل الخروج"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="left"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/bg_dark"
+                            android:layout_margin="@dimen/_5sdp"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/black_overlay"
+                        />
+
+
+
+                </android.support.v7.widget.LinearLayoutCompat>
+            </ScrollView>
+        </android.support.design.widget.NavigationView>
+
+
+
+    </android.support.v4.widget.DrawerLayout>
     <include
-        layout="@layout/app_bar_navigation"
+        layout="@layout/ads_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_navigation"
-        app:menu="@menu/activity_navigation_drawer"
-        app:itemTextColor="#000"
-        android:background="#fff"/>
-
-</android.support.v4.widget.DrawerLayout>
+</FrameLayout>

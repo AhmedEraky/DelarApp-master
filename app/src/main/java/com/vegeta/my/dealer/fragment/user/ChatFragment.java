@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.LoginActivity;
 import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.activity.SplashActivity;
@@ -63,6 +64,10 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
         else{
             bindViews();
         }
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
+
+
         return view;
     }
     @Override

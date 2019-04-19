@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.LoginActivity;
 import com.vegeta.my.dealer.activity.SplashActivity;
 import com.vegeta.my.dealer.adapter.chat.ChatFirebaseAdapter;
@@ -40,6 +41,8 @@ public class ChatActivity extends AppCompatActivity implements  View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
+
         getData();
         networkConnection=new NetworkConnection(this);
         if (!networkConnection.isNetworkAvailable(this)) {
@@ -49,6 +52,9 @@ public class ChatActivity extends AppCompatActivity implements  View.OnClickList
         else{
             bindViews();
         }
+
+        new DelarUtils().getAds(this,getWindow().getDecorView());
+
 
 
     }

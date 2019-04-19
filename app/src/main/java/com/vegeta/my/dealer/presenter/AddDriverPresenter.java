@@ -25,14 +25,14 @@ public class AddDriverPresenter {
     public void registUser(ProductDriver body) {
         Map<String, Object> map = new HashMap<>();
         map.put("id", 0);
-        map.put("SourceAdress", body.sourceAdress);
+        map.put("DriverName", body.DriverName);
         map.put("launchTime", body.launchTime);
-        map.put("DestinationAddress", body.destinationAddress);
-        map.put("SourceLocation", body.sourceLocation);
+        map.put("destinationAddress", body.destinationAddress);
+        map.put("SourceAdress", body.sourceAdress);
         map.put("DestinationLocation", body.destinationLocation);
-        map.put("journeydate", new Date());
+        map.put("launchDate", body.launchdate);
         map.put("NumOfSeats", body.numOfSeats);
-        map.put("JourneyDriver", body.journeyDriver);
+        map.put("CostPerSeat", body.costPerSeat);
         Service service = Client.getClient().create(Service.class);
         Call<AddResponse> call;
         call = service.AddJourneyDriverData(map);

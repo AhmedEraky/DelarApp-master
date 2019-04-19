@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_marginTop="@dimen/_15sdp"
     android:gravity="center"
+    android:paddingTop="@dimen/_30sdp"
+    android:background="@color/bg_dark"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-   <ImageView
+   <de.hdodenhof.circleimageview.CircleImageView
        android:layout_width="@dimen/_100sdp"
        android:layout_height="@dimen/_100sdp"
+       android:layout_gravity="center"
        android:id="@+id/nav_header_logo"
        android:layout_marginTop="@dimen/_15sdp"
-       android:src="@drawable/profie_pic"/>
+       android:layout_marginBottom="@dimen/_15sdp"
+       android:src="@drawable/profie_pic"
+       tools:ignore="TooDeepLayout" />
+
 
    <TextView
        android:id="@+id/user_name"
@@ -23,8 +27,14 @@
        android:layout_height="@dimen/_40sdp"
        android:gravity="center"
        android:text="اسم المستخدم"
-       android:layout_marginBottom="@dimen/_10sdp"
+       android:textColor="@color/bg_dark"
        android:fontFamily="@font/cairo_semibold"
-       android:background="#f00"/>
+       android:background="#fff"/>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/black_overlay"
+       >
+   </View>
 
 </LinearLayout>

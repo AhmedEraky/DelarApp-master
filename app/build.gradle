@@ -1,5 +1,25 @@
 apply plugin: 'com.android.application'
 
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.28.1'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+
 android {
     compileSdkVersion 27
     lintOptions {
@@ -9,8 +29,8 @@ android {
         applicationId "com.vegeta.my.dealer"
         minSdkVersion 17
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.0.5"
+        versionCode 9
+        versionName "1.0.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -66,8 +86,24 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:16.0.0"
     implementation 'com.seatgeek:placesautocomplete:0.3-SNAPSHOT'
 
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+        transitive = true
+
+    }
+    implementation 'com.crashlytics.sdk.android:crashlytics-ndk:2.0.5'
+
+
+    implementation 'com.droidninja:filepicker:2.1.4'
+
+
 }
 
+
+crashlytics {
+    enableNdk true
+    androidNdkOut 'src/main/obj'
+    androidNdkLibsOut 'src/main/libs'
+}
 
 
 

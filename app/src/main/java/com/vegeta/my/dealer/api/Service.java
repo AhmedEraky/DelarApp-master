@@ -35,55 +35,55 @@ import rx.Observable;
 
 public interface Service {
     @GET("api/clinic")
-    Call<ArrayList<Product>>  getClinicData();
+    Call<ArrayList<Product>>  getClinicData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/cafe")
-    Call<ArrayList<Product>>  getCafeData();
+    Call<ArrayList<Product>>  getCafeData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/clothesShop")
-    Call<ArrayList<Product>>  getClothesShopData();
+    Call<ArrayList<Product>>  getClothesShopData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/electronic")
-    Call<ArrayList<Product>>  getElectronicData();
+    Call<ArrayList<Product>>  getElectronicData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/gallery")
-    Call<ArrayList<Product>>  getGalleryData();
+    Call<ArrayList<Product>>  getGalleryData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/hall")
-    Call<ArrayList<Product>>  getHallData();
+    Call<ArrayList<Product>>  getHallData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/hospital")
-    Call<ArrayList<Product>>  getHospitalData();
+    Call<ArrayList<Product>>  getHospitalData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/journeyDriver")
-    Call<ArrayList<ProductDriver>>  getJourneyDriverData();
+    Call<ArrayList<ProductDriver>>  getJourneyDriverData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/labCenter")
-    Call<ArrayList<Product>>  getLabCenterData();
+    Call<ArrayList<Product>>  getLabCenterData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/library")
-    Call<ArrayList<Product>>  getLibraryData();
+    Call<ArrayList<Product>>  getLibraryData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/market")
-    Call<ArrayList<Product>>  getMarketData();
+    Call<ArrayList<Product>>  getMarketData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/pharmacy")
-    Call<ArrayList<Product>>  getPharmacyData();
+    Call<ArrayList<Product>>  getPharmacyData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/quickLiftDriver")
-    Call<ArrayList<Product>>  getQuickLiftDriverData();
+    Call<ArrayList<Product>>  getQuickLiftDriverData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
 
     @GET("api/other")
-    Call<ArrayList<Product>>  getRayCenterData();
+    Call<ArrayList<Product>>  getRayCenterData(@Query("index")int index,@Query("pagesize")int pageNumber);
 
     @GET("api/resturant")
-    Call<ArrayList<Product>>  getResturantData();
+    Call<ArrayList<Product>>  getResturantData(@Query("index")int index,@Query("pagesize")int pageNumber);
 //
 
     @POST("Token")
@@ -164,55 +164,55 @@ public interface Service {
     //get search Result
 
 
-    @GET("api/clinic")
+    @GET("api/clinic/search")
     Call<ArrayList<Product>>  getClinicData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/cafe")
+    @GET("api/cafe/search")
     Call<ArrayList<Product>>  getCafeData(@Query("text")String searchkey, @Query("index")int pageNumber);
 
 
-    @GET("api/clothesShop")
+    @GET("api/clothesShop/search")
     Call<ArrayList<Product>>  getClothesShopData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/electronic")
+    @GET("api/electronic/search")
     Call<ArrayList<Product>>  getElectronicData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/gallery")
+    @GET("api/gallery/search")
     Call<ArrayList<Product>>  getGalleryData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/hall")
+    @GET("api/hall/search")
     Call<ArrayList<Product>>  getHallData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/hospital")
+    @GET("api/hospital/search")
     Call<ArrayList<Product>>  getHospitalData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/journeyDriver")
+    @GET("api/journeyDriver/search")
     Call<ArrayList<Product>>  getJourneyDriverData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/labCenter")
+    @GET("api/labCenter/search")
     Call<ArrayList<Product>>  getLabCenterData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/library")
+    @GET("api/library/search")
     Call<ArrayList<Product>>  getLibraryData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/market")
+    @GET("api/market/search")
     Call<ArrayList<Product>>  getMarketData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/pharmacy")
+    @GET("api/pharmacy/search")
     Call<ArrayList<Product>>  getPharmacyData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/quickLiftDriver")
+    @GET("api/quickLiftDriver/search")
     Call<ArrayList<Product>>  getQuickLiftDriverData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 
-    @GET("api/other")
+    @GET("api/other/search")
     Call<ArrayList<Product>>  getRayCenterData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
-    @GET("api/resturant")
+    @GET("api/resturant/search")
     Call<ArrayList<Product>>  getResturantData(@Query("text")String searchkey,@Query("index")int pageNumber);
 
 

@@ -28,68 +28,68 @@ public class ProductPresenter {
         this.productInterface = productInterface;
     }
 
-    public void getProductData(int id){
+    public void getProductData(int id,int pageNumber){
 
         Service service= Client.getClient().create(Service.class);
         Call<ArrayList<Product>> call=null;
         switch (id) {
             case 1:/*
                 activityTitle.setText("ماركت");*/
-                call = service.getMarketData();
+                call = service.getMarketData(pageNumber,20);
 
                 break;
             case 2:/*
                 activityTitle.setText("كافيهات");*/
-                call = service.getCafeData();
+                call = service.getCafeData(pageNumber,20);
 
 
                 break;
             case 3:/*
                 activityTitle.setText("مطاعم");*/
-                call = service.getResturantData();
+                call = service.getResturantData(pageNumber,20);
 
                 break;
             case 4:/*
                 activityTitle.setText("محل ملابس");*/
-                call = service.getClothesShopData();
+                call = service.getClothesShopData(pageNumber,20);
 
                 break;
             case 5:
                 /*activityTitle.setText("عيادلت");*/
-                call = service.getClinicData();
+                call = service.getClinicData(pageNumber,20);
 
                 break;
             case 6:/*
                 activityTitle.setText("مستشفيات");*/
-                call = service.getHospitalData();
+                call = service.getHospitalData(pageNumber,20);
 
                 break;
             case 7:
                 /*activityTitle.setText("معارض");*/
-                call = service.getGalleryData();
+                call = service.getGalleryData(pageNumber,20);
 
                 break;
             case 8:
 //                activityTitle.setText("موبيلات");
-                call = service.getElectronicData();
+                call = service.getElectronicData(pageNumber,20);
 
                 break;
             case 9:
 //                activityTitle.setText("مشاوير");
-               // call = service.getJourneyDriverData();
+                // call = service.getJourneyDriverData();
 
                 break;
             case 10:
                 //activityTitle.setText("خدمات اخري");
-                call = service.getRayCenterData();
+                call = service.getRayCenterData(pageNumber,20);
 
                 break;
             case 11:
-                call = service.getLibraryData();
+                call = service.getLibraryData(pageNumber,20);
 
                 break;
             default:
-                call = service.getHallData();
+                call = service.getHallData(pageNumber,20);
                 break;
         }
         call.enqueue(new Callback<ArrayList<Product>>() {

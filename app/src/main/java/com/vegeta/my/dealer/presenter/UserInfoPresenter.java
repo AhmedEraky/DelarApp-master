@@ -1,6 +1,7 @@
 package com.vegeta.my.dealer.presenter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.vegeta.my.dealer.api.Client;
 import com.vegeta.my.dealer.api.Service;

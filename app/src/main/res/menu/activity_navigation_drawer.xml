@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/user"
+            android:icon="@drawable/home"
             android:title="الصفحه الرئسيه" />
         <item
             android:id="@+id/nav_add_service"
@@ -16,7 +16,7 @@
 
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/password"
+            android:icon="@drawable/logout"
             android:title="تسجيل الدخول"
             />
 
@@ -32,7 +32,7 @@
             />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/password"
+            android:icon="@drawable/logout"
             android:title="تسجيل الخروج"
             />
     </group>

@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.api.retrofitinterface.GetSpecialistInterface;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
 import com.vegeta.my.dealer.model.product.AddHospitalSpecialist;
@@ -42,6 +43,8 @@ public class ServiceProviderFragmentHospital extends FragmentParent implements G
         findviews();
         getData();
         setCLick();
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
 
         return view;
     }

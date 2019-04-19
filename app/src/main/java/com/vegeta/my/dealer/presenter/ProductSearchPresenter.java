@@ -35,61 +35,61 @@ public class ProductSearchPresenter {
         switch (id) {
             case 1:/*
                 activityTitle.setText("ماركت");*/
-                call = service.getMarketData(searchText,0);
+                call = service.getMarketData(searchText,1);
 
                 break;
             case 2:/*
                 activityTitle.setText("كافيهات");*/
-                call = service.getCafeData(searchText,0);
+                call = service.getCafeData(searchText,1);
 
 
                 break;
             case 3:/*
                 activityTitle.setText("مطاعم");*/
-                call = service.getResturantData(searchText,0);
+                call = service.getResturantData(searchText,1);
 
                 break;
             case 4:/*
                 activityTitle.setText("توصيله");*/
-                call = service.getQuickLiftDriverData(searchText,0);
+                call = service.getClothesShopData(searchText,1);
 
                 break;
             case 5:
                 /*activityTitle.setText("عيادلت");*/
-                call = service.getClinicData(searchText,0);
+                call = service.getClinicData(searchText,1);
 
                 break;
             case 6:/*
                 activityTitle.setText("مستشفيات");*/
-                call = service.getHospitalData(searchText,0);
+                call = service.getHospitalData(searchText,1);
 
                 break;
             case 7:
                 /*activityTitle.setText("معارض");*/
-                call = service.getGalleryData(searchText,0);
+                call = service.getGalleryData(searchText,1);
 
                 break;
             case 8:
 //                activityTitle.setText("موبيلات");
-                call = service.getElectronicData(searchText,0);
+                call = service.getElectronicData(searchText,1);
 
                 break;
             case 9:
 //                activityTitle.setText("مشاوير");
-                call = service.getJourneyDriverData(searchText,0);
+                call = service.getJourneyDriverData(searchText,1);
 
                 break;
             case 10:
                 //activityTitle.setText("خدمات اخري");
-                call = service.getRayCenterData(searchText,0);
+                call = service.getRayCenterData(searchText,1);
 
                 break;
             case 11:
-                call = service.getLibraryData(searchText,0);
+                call = service.getLibraryData(searchText,1);
 
                 break;
             default:
-                call = service.getHallData(searchText,0);
+                call = service.getHallData(searchText,1);
                 break;
         }
         call.enqueue(new Callback<ArrayList<Product>>() {

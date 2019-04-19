@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg"
-    tools:context=".fragment.user.CategoryFragment">
+    android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="@dimen/_15sdp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/category_fragment_recycler">
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        tools:context=".fragment.user.CategoryFragment">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/category_fragment_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_15sdp">
+
+        </android.support.v7.widget.RecyclerView>
 
 
-</LinearLayout>
+    </LinearLayout>
+
+    <include
+        layout="@layout/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
+
+
+

@@ -1,180 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#fff"
-    tools:context=".fragment.upload.ServiceProviderUploadImageFragment">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        tools:context=".fragment.upload.ServiceProviderUploadImageFragment">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="الصوره 1 :" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/service_provider_upload_button1"
-            android:layout_width="0dp"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="الصوره 1 :" />
+
+            <Button
+                android:id="@+id/service_provider_upload_button1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="اضافه" />
+
+            <ImageView
+                android:id="@+id/service_provider_upload_image1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:src="@drawable/clinic" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="اضافه" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="الصوره 2 :" />
 
-        <ImageView
-            android:id="@+id/service_provider_upload_image1"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_weight="1"
-            android:src="@drawable/clinic" />
+            <Button
+                android:id="@+id/service_provider_upload_button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="اضافه" />
+
+            <ImageView
+                android:id="@+id/service_provider_upload_image2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:src="@drawable/clinic" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="الصوره 3 :" />
+
+            <Button
+                android:id="@+id/service_provider_upload_button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="اضافه" />
+
+            <ImageView
+                android:id="@+id/service_provider_upload_image3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:src="@drawable/clinic" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="الصوره 4 :" />
+
+            <Button
+                android:id="@+id/service_provider_upload_button4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="اضافه" />
+
+            <ImageView
+                android:id="@+id/service_provider_upload_image4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:src="@drawable/clinic" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="الصوره 5 :" />
+
+            <Button
+                android:id="@+id/service_provider_upload_button5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="اضافه" />
+
+            <ImageView
+                android:id="@+id/service_provider_upload_image5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:src="@drawable/clinic" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/service_provider_upload_image_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/ride_status_green"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="التالي"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp"
+
+                />
+
+            <Button
+                android:id="@+id/service_provider_upload_image_previous"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/ride_status_green"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="السابق"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-    <LinearLayout
+    <include
+        layout="@layout/ads_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="الصوره 2 :" />
+        android:layout_height="match_parent" />
+</FrameLayout>
 
-        <Button
-            android:id="@+id/service_provider_upload_button2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="اضافه" />
-
-        <ImageView
-            android:id="@+id/service_provider_upload_image2"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_weight="1"
-            android:src="@drawable/clinic" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="الصوره 3 :" />
-
-        <Button
-            android:id="@+id/service_provider_upload_button3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="اضافه" />
-
-        <ImageView
-            android:id="@+id/service_provider_upload_image3"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_weight="1"
-            android:src="@drawable/clinic" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="الصوره 4 :" />
-
-        <Button
-            android:id="@+id/service_provider_upload_button4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="اضافه" />
-
-        <ImageView
-            android:id="@+id/service_provider_upload_image4"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_weight="1"
-            android:src="@drawable/clinic" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="الصوره 5 :" />
-
-        <Button
-            android:id="@+id/service_provider_upload_button5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="اضافه" />
-
-        <ImageView
-            android:id="@+id/service_provider_upload_image5"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_weight="1"
-            android:src="@drawable/clinic" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:gravity="bottom">
-
-        <Button
-            android:id="@+id/service_provider_upload_image_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_5sdp"
-            android:layout_weight="1"
-            android:background="@drawable/login_btn_design"
-            android:fontFamily="@font/cairo_semibold"
-            android:text="التالي"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp"
-
-            />
-
-        <Button
-            android:id="@+id/service_provider_upload_image_previous"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_5sdp"
-            android:layout_weight="1"
-            android:background="@drawable/login_btn_design"
-            android:fontFamily="@font/cairo_semibold"
-            android:text="السابق"
-            android:textColor="#fff"
-            android:textSize="@dimen/_15sdp" />
-    </LinearLayout>
-
-
-</LinearLayout>

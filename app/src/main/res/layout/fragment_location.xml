@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.upload.LocationFragment">
-
-    <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
-        android:id="@+id/places_autocomplete"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:pacv_googleMapsApiKey="AIzaSyDtj9ufyCLXuGexhISJSzkRxgaID-uOVWM"/>
+        android:layout_height="match_parent">
+        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+            android:id="@+id/places_autocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:pacv_googleMapsApiKey="AIzaSyDtj9ufyCLXuGexhISJSzkRxgaID-uOVWM"/>
+
+
+        <include
+            layout="@layout/ads_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 </FrameLayout>

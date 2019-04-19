@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/contentRoot"
-    android:orientation="vertical"
-    tools:context=".fragment.user.ChatFragment">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:id="@+id/contentRoot"
+        android:orientation="vertical"
+        tools:context=".fragment.user.ChatFragment">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/messageRecyclerView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#eeeeee"
-            android:scrollbars="none" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/shadow_top" />
-    </FrameLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/messageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee"
+                android:scrollbars="none" />
 
-    <RelativeLayout
-        android:background="#fff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="2dp">
-        <EditText
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shadow_top" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editTextMessage"
-            android:layout_toStartOf="@+id/buttonMessage"
-            android:layout_marginLeft="@dimen/_10sdp"
-            />
-        <ImageView
-            android:id="@+id/buttonMessage"
-            android:src="@android:drawable/ic_menu_send"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="4dp"
-            android:layout_alignBottom="@+id/editTextMessage"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
+            android:padding="2dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextMessage"
+                android:layout_toStartOf="@+id/buttonMessage"
+                android:layout_marginLeft="@dimen/_10sdp"
+                />
+            <ImageView
+                android:id="@+id/buttonMessage"
+                android:src="@android:drawable/ic_menu_send"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="4dp"
+                android:layout_alignBottom="@+id/editTextMessage"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                />
+        </RelativeLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

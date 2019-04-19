@@ -13,7 +13,9 @@ import android.widget.Toast;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.NavigationActivity;
+import com.vegeta.my.dealer.adapter.product.EndlessRecyclerViewScrollListener;
 import com.vegeta.my.dealer.adapter.product.ProductsAdapter;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.retrofitinterface.ProductDataInterface;
@@ -33,11 +35,12 @@ public class ProductsFragment extends FragmentParent implements
     NetworkConnection networkConnection;
     ProductPresenter productPresenter;
     ProductSearchPresenter productSearchPresenter;
-
+    LinearLayoutManager linearLayoutManager;
     SkeletonScreen skeletonScreen;
     ProductsAdapter productsAdapter;
     int id;
     int searchID;
+    String query;
 
 
 
@@ -56,7 +59,7 @@ public class ProductsFragment extends FragmentParent implements
         if(bundle!=null) {
             id = bundle.getInt("category", -1);
             searchID = bundle.getInt("searchCategory", -1);
-            String query=bundle.getString("query");
+             query=bundle.getString("query");
 
             findViews();
             if(searchID==-1&&id!=-1){
@@ -72,6 +75,10 @@ public class ProductsFragment extends FragmentParent implements
                 }
             }
         }
+
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
+
         return view;
     }
 
@@ -84,9 +91,17 @@ public class ProductsFragment extends FragmentParent implements
 
     private void findViews() {
         recyclerView = view.findViewById(R.id.product_fragment_recycler);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+        linearLayoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         skeletonScreen = Skeleton.bind(recyclerView).load(R.layout.item_skeleton_news).show();
+        if(searchID==-1||query==null) {
+            recyclerView.setOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+                @Override
+                public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                    productPresenter.getProductData(id, page + 1);
+                }
+            });
+        }
     }
     private void setActivityTitle() {
         try {
@@ -183,7 +198,7 @@ public class ProductsFragment extends FragmentParent implements
     private void setData() {
         if (networkConnection.isNetworkAvailable(this.getContext())) {
             productPresenter = new ProductPresenter(this.getContext(), this);
-            productPresenter.getProductData(id);
+            productPresenter.getProductData(id,1);
 
         }else {
             error(getString(R.string.no_internet_msg));
@@ -195,22 +210,34 @@ public class ProductsFragment extends FragmentParent implements
 
     @Override
     public void getProductData(ArrayList<Product> products) {
-        this.products = products;
-        if(this.products==null||this.products.size()==0)
+        if(this.products==null) {
+            this.products = products;
+            if(this.products==null||this.products.size()==0)
+            {
+                Toast.makeText(getActivity(), "عفوا لا توجد بيانات الان", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                skeletonScreen.hide();
+                setRecycleContent();
+            }
+        }
+        else
         {
-            Toast.makeText(this.getContext(), "عفوا لا توجد بيانات الان", Toast.LENGTH_SHORT).show();
+            for (Product product:products){
+                this.products.add(product);
+            }
+            productsAdapter.notifyDataSetChanged();
         }
-        else{
-            skeletonScreen.hide();
-            setRecycleContent();
-        }
+
     }
 
 
     private void setRecycleContent() {
-        productsAdapter = new ProductsAdapter(this.getContext(), products);
-        productsAdapter.onClick(this);
-        recyclerView.setAdapter(productsAdapter);
+        if(productsAdapter==null) {
+            productsAdapter = new ProductsAdapter(this.getContext(), products);
+            productsAdapter.onClick(this);
+            recyclerView.setAdapter(productsAdapter);
+        }
     }
 
 

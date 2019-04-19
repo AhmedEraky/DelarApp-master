@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.adapter.category.CategoryAdapter;
 import com.vegeta.my.dealer.model.category.Category;
@@ -93,6 +94,11 @@ public class CategoryFragment extends FragmentParent implements
         setData();
         setRecycleContent();
         context=this.getActivity();
+
+        DelarUtils.flagSearchHome=false;
+
+        new DelarUtils().getAds(this.getActivity(),view);
+
 
         view.setFocusableInTouchMode(true);
         view.requestFocus();

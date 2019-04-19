@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
 import com.vegeta.my.dealer.model.product.ProductAddBody;
 
@@ -39,6 +40,11 @@ public class ServiceProviderFragment2 extends FragmentParent {
         getBundel();
         setData();
         setOnClick();
+
+        new DelarUtils().getAds(this.getActivity(),view);
+
+        DelarUtils.flagSearchHome=true;
+
         return view;
     }
 

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.intuit.sdp:sdp-android-1.0.6">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.6.aar/47ab8d201080a7b8064a52356eaec748/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.6.aar/47ab8d201080a7b8064a52356eaec748/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.6.aar/0dfbe2d824813ec6dc715d1460b9c1b0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdp-android-1.0.6.aar/0dfbe2d824813ec6dc715d1460b9c1b0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

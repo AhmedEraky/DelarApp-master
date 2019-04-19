@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.retrofitinterface.AddProductInterface;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
@@ -57,6 +58,11 @@ public class UploadDataFragment extends FragmentParent implements AddProductInte
         setRetainInstance(true);
         findviews();
         setOnClick();
+
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
+
+
         return view;
     }
 

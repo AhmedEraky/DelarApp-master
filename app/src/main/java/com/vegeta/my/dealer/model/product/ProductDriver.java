@@ -33,9 +33,12 @@ public class ProductDriver implements  Parcelable {
     @SerializedName("DestinationLocation")
     @Expose
     public Location destinationLocation;
-    @SerializedName("journeydate")
+    @SerializedName("launchDate")
     @Expose
-    public String journeydate;
+    public String launchdate;
+    @SerializedName("DriverName")
+    @Expose
+    public String DriverName;
     @SerializedName("NumOfSeats")
     @Expose
     public int numOfSeats;
@@ -54,6 +57,16 @@ public class ProductDriver implements  Parcelable {
     @SerializedName("JourneyDriver")
     @Expose
     public JourneyDriver journeyDriver;
+
+
+    public String getDriverName() {
+        return DriverName;
+    }
+
+    public void setDriverName(String driverName) {
+        DriverName = driverName;
+    }
+
     public final static Parcelable.Creator<ProductDriver> CREATOR = new Creator<ProductDriver>() {
 
 
@@ -80,7 +93,7 @@ public class ProductDriver implements  Parcelable {
         this.endTime = ((String) in.readValue((String.class.getClassLoader())));
         this.sourceLocation = ((Location) in.readValue((Location.class.getClassLoader())));
         this.destinationLocation = ((Location) in.readValue((Location.class.getClassLoader())));
-        this.journeydate = ((String) in.readValue((String.class.getClassLoader())));
+        this.launchdate = ((String) in.readValue((String.class.getClassLoader())));
         this.numOfSeats = ((int) in.readValue((int.class.getClassLoader())));
         this.costPerSeat = ((int) in.readValue((int.class.getClassLoader())));
         this.expectedCost = ((String) in.readValue((String.class.getClassLoader())));
@@ -101,7 +114,7 @@ public class ProductDriver implements  Parcelable {
         dest.writeValue(endTime);
         dest.writeValue(sourceLocation);
         dest.writeValue(destinationLocation);
-        dest.writeValue(journeydate);
+        dest.writeValue(launchdate);
         dest.writeValue(numOfSeats);
         dest.writeValue(costPerSeat);
         dest.writeValue(expectedCost);

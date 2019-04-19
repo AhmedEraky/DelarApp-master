@@ -22,11 +22,11 @@ public class DriverPresenter {
         this.productInterface = productInterface;
     }
 
-    public void getProductData() {
+    public void getProductData(int pageNumber) {
 
         Service service = Client.getClient().create(Service.class);
         Call<ArrayList<ProductDriver>> call = null;
-        call = service.getJourneyDriverData();
+        call = service.getJourneyDriverData(pageNumber,20);
         call.enqueue(new Callback<ArrayList<ProductDriver>>() {
             @Override
             public void onResponse(Call<ArrayList<ProductDriver>> call, Response<ArrayList<ProductDriver>> response) {

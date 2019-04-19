@@ -1,6 +1,7 @@
 package com.vegeta.my.dealer.adapter.chat;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -12,12 +13,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.model.chat.ChatModel;
 import com.vegeta.my.dealer.model.chat.UserChat;
 import com.vegeta.my.dealer.view.ChatClick;
 import com.vegeta.my.dealer.view.ProductClick;
 
 import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.vegeta.my.dealer.Utils.Maps.DelarUtils.setImg;
 
 /**
  * Created by Eraky on 3/1/2019.
@@ -50,6 +55,13 @@ public class MyChatAdapter extends RecyclerView.Adapter<MyChatAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.chatName.setText(userChat.get(position).getProductName());
         holder.chatItem.setOnClickListener(v -> chatClick.openUserChat(userChat.get(position)));
+  /*      SharedPreferences mSharedPreferences;
+
+        mSharedPreferences      = context.getSharedPreferences("tokenDetail",MODE_PRIVATE);
+
+        setImg(mSharedPreferences.getString("img", ""),nav_header_logo, context);
+
+        */
     }
 
     @Override

@@ -11,10 +11,13 @@ import android.widget.Toast;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.adapter.product.DriverAdapter;
+import com.vegeta.my.dealer.adapter.product.EndlessRecyclerViewScrollListener;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.retrofitinterface.DriverInterface;
+import com.vegeta.my.dealer.model.product.Product;
 import com.vegeta.my.dealer.model.product.ProductDriver;
 import com.vegeta.my.dealer.presenter.DriverPresenter;
 import com.vegeta.my.dealer.view.DriverClick;
@@ -28,6 +31,7 @@ public class DriverFragment extends FragmentParent implements DriverInterface,Dr
     DriverPresenter productPresenter;
     SkeletonScreen skeletonScreen;
     DriverAdapter productsAdapter;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +53,11 @@ public class DriverFragment extends FragmentParent implements DriverInterface,Dr
         }else {
             error(getString(R.string.no_internet_msg));
         }
+
+        new DelarUtils().getAds(this.getActivity(),view);
+
+        DelarUtils.flagSearchHome=true;
+
         return view;
     }
     @Override
@@ -63,15 +72,23 @@ public class DriverFragment extends FragmentParent implements DriverInterface,Dr
     }
     private void findViews() {
         recyclerView = view.findViewById(R.id.driver_fragment_recycler);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+        linearLayoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         skeletonScreen = Skeleton.bind(recyclerView).load(R.layout.item_skeleton_news).show();
+        /*if(searchID==-1||query==null) {
+            recyclerView.setOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+                @Override
+                public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                    productPresenter.getProductData(page + 1);
+                }
+            });
+        }*/
     }
 
     private void setData() {
         if (networkConnection.isNetworkAvailable(this.getContext())) {
             productPresenter = new DriverPresenter(this.getContext(), this);
-            productPresenter.getProductData();
+            productPresenter.getProductData(1);
 
         }else {
             error(getString(R.string.no_internet_msg));
@@ -81,22 +98,30 @@ public class DriverFragment extends FragmentParent implements DriverInterface,Dr
 
     @Override
     public void getDriverData(ArrayList<ProductDriver> products) {
+        if(this.products==null) {
+            this.products=products;
+            if(this.products==null||this.products.size()==0)
+            {
+                Toast.makeText(this.getContext(), "عفوا لا توجد بيانات الان", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                skeletonScreen.hide();
+                setRecycleContent();
+            }
 
-        this.products=products;
-        if(this.products==null||this.products.size()==0)
-        {
-            Toast.makeText(this.getContext(), "عفوا لا توجد بيانات الان", Toast.LENGTH_SHORT).show();
+        }else {
+            for (ProductDriver product:products){
+                this.products.add(product);
+            }
+            productsAdapter.notifyDataSetChanged();
         }
-        else{
-            skeletonScreen.hide();
-            setRecycleContent();
-        }
-
     }
 
     private void setRecycleContent() {
-        productsAdapter = new DriverAdapter(this.getContext(), products,this);
-        recyclerView.setAdapter(productsAdapter);
+        if (productsAdapter==null) {
+            productsAdapter = new DriverAdapter(this.getContext(), products, this);
+            recyclerView.setAdapter(productsAdapter);
+        }
     }
 
 

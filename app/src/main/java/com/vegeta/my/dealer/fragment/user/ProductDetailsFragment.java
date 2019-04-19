@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.ryan.rv_gallery.GalleryRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.LoginActivity;
 import com.vegeta.my.dealer.activity.SplashActivity;
 import com.vegeta.my.dealer.adapter.RecyclerAdapter;
@@ -42,8 +44,9 @@ public class ProductDetailsFragment extends FragmentParent {
     GalleryRecyclerView mRecyclerView;
     ArrayList<String> imgdata;
     RelativeLayout spechialistLayout;
-    ImageView mainImage,locationImage,imgSpecialist,imgChatBtn,imgPhone;
-    TextView addressTxt,phone,txtImg,txtMoreInfo,clincSpechislidt,txtMenuTitle;
+    ImageView mainImage,locationImage,imgSpecialist,imgChatBtn,imgPhone,imgPhone2;
+    CardView phone_1,phone_2,listDetail;
+    TextView addressTxt,phone,phone2,txtImg,txtMoreInfo,clincSpechislidt,txtMenuTitle;
     Button btnChat;
     NestedScrollView nestedScrollView;
     int id;
@@ -78,6 +81,10 @@ public class ProductDetailsFragment extends FragmentParent {
 
         setOnClick();
         setRecycleContent();
+
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
+
         return view;
     }
 
@@ -97,10 +104,10 @@ public class ProductDetailsFragment extends FragmentParent {
                     specialistList.setVisibility(View.GONE);
                 } else if(id==6)
                     specialistList.setVisibility(View.VISIBLE);
-                else if(id==5 && clincSpechislidt.getVisibility() == View.VISIBLE)
-                    clincSpechislidt.setVisibility(View.GONE);
+                else if(id==5 && listDetail.getVisibility() == View.VISIBLE)
+                    listDetail.setVisibility(View.GONE);
                 else if(id==5)
-                    clincSpechislidt.setVisibility(View.VISIBLE);
+                    listDetail.setVisibility(View.VISIBLE);
 
             });
         }
@@ -123,6 +130,7 @@ public class ProductDetailsFragment extends FragmentParent {
             intent.setData(Uri.parse("tel:"+product.getMobileNo()));
             startActivity(intent);
         });
+
 
         if(id==5||id==6) {
             btnChat.setOnClickListener(v -> {
@@ -147,20 +155,36 @@ public class ProductDetailsFragment extends FragmentParent {
 
     private void setData() {
 
-        //User Number
-        String Number="";
-        if(!product.getMobileNo().equals("")){
-            Number+=product.getMobileNo();
-        }
-        if(!product.getPhoneNo().equals(""))
+
+
+        if (product.getPhoneNo()!=null)
         {
-            if(!Number.equals(""))
+            if(!product.getPhoneNo().equals(""))
             {
-                Number+=" - ";
+                phone.setText(product.getPhoneNo());
             }
-            Number+=product.getPhoneNo();
         }
-        phone.setText(Number);
+        if(id==5||id==6) {
+            if (product.getMobileNo()!=null)
+            {
+                if(!product.getMobileNo().equals(""))
+                {
+                    phone2.setText(product.getMobileNo());
+                }
+            }
+            phone_1.setOnClickListener(view1 -> {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+product.getMobileNo()));
+                startActivity(intent);
+            });
+
+        }
+        phone_2.setOnClickListener(view1 -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:"+product.getPhoneNo()));
+            startActivity(intent);
+        });
+
         if(!product.getAddress().equals(""))
             addressTxt.setText(product.getAddress());
 
@@ -227,6 +251,14 @@ public class ProductDetailsFragment extends FragmentParent {
     }
 
     private void findViews() {
+        if(id==5||id==6) {
+            imgPhone2=view.findViewById(R.id.product_details_img_phone2);
+            phone2=view.findViewById(R.id.product_details_txt_phone2);
+
+            phone_1=view.findViewById(R.id.phone_1);
+        }
+        phone_2=view.findViewById(R.id.phone_2);
+
         imgPhone=view.findViewById(R.id.product_details_img_phone);
         mRecyclerView = view.findViewById(R.id.product_details_gallery);
         mainImage=view.findViewById(R.id.product_details_img_main);
@@ -242,6 +274,7 @@ public class ProductDetailsFragment extends FragmentParent {
         specialistList=view.findViewById(R.id.product_details_list_specialist);
         spechialistLayout=view.findViewById(R.id.product_details_layout_specialist);
         clincSpechislidt=view.findViewById(R.id.product_details_txt_clinic_specialist);
+        listDetail=view.findViewById(R.id.listDetail);
     }
 
 

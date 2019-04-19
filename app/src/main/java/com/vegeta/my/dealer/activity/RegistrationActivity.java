@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.squareup.picasso.Picasso;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.retrofitinterface.RegistrationInterface;
 import com.vegeta.my.dealer.model.login.LoginResponse;
@@ -45,6 +46,8 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
         networkConnection=new NetworkConnection(this);
         findviews();
         setOnClick();
+        new DelarUtils().getAds(this,getWindow().getDecorView());
+
     }
 
     private void setOnClick() {

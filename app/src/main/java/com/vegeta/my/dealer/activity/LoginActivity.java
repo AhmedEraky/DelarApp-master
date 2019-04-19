@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -19,11 +20,13 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.Login;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.api.NetworkConnection;
 import com.vegeta.my.dealer.api.NetworkUtil;
 import com.vegeta.my.dealer.api.retrofitinterface.LoginDataInterface;
@@ -89,6 +92,9 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
 
         loginButton.setReadPermissions("email");
 
+        new DelarUtils().getAds(this,getWindow().getDecorView());
+
+
 
         /*List < String > permissionNeeds = Collections.singletonList("email");*/
         //loginButton.setReadPermissions(permissionNeeds);
@@ -128,6 +134,11 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
                                     registerExternalModel.setProvider("Facebook");
                                     registerExternalModel.setSecondName(last_name);
                                     registerExternalModel.setImgurl(Img_URL);
+                                    SharedPreferences.Editor editor=getSharedPreferences( "settings",MODE_PRIVATE ).edit();
+                                    editor.putString("UrlImage",Img_URL);
+                                    SplashActivity.userInfo.setImageURl(Img_URL);
+                                    editor.apply();
+
                                     registerExternalModel.setExternalAccessToken(accessToken.getToken());
                                     registerExternalModel.setFirstName(first_name);
 
@@ -207,21 +218,34 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
         //Toast.makeText(LoginActivity.this,"dddd", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "مرحبا بك", Toast.LENGTH_SHORT).show();
         //SplashActivity.userData=response;
+        hud.dismiss();
         SharedPreferences.Editor editor=getSharedPreferences( "settings",MODE_PRIVATE ).edit();
         editor.putString("name",loginResponse.getUserName());
         editor.putString("token",loginResponse.getAccessToken());
-        hud.dismiss();
-        //editor.putString("UrlImage",loginResponse.getImg());
         editor.apply();
         SplashActivity.userData.setUserName(loginResponse.getUserName());
         SplashActivity.userData.setAccessToken(loginResponse.getAccessToken());
-        NavigationActivity.changeMenu();
+        //NavigationActivity.changeMenu();
         //todo call new API
-        UserInfoPresenter userInfoPresenter=new UserInfoPresenter(this,this);
-        userInfoPresenter.getInfo();
 
 
-        this.finish();
+        SharedPreferences.Editor editor1=getSharedPreferences( "settings",MODE_PRIVATE ).edit();
+        editor1.putString("userID",loginResponse.getAccessToken());
+        SplashActivity.userInfo.setImageURl(loginResponse.getImg());
+        SplashActivity.userInfo.setId(loginResponse.getImg());
+        SplashActivity.userInfo.setUsername(loginResponse.getUserName());
+        editor1.apply();
+
+        /*UserInfoPresenter userInfoPresenter=new UserInfoPresenter(this,this);
+        userInfoPresenter.getInfo();*/
+
+        startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
+
+        /*Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+        startActivity(intent);*/
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        finish();
+
 
     }
 
@@ -291,13 +315,16 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
             SharedPreferences.Editor editor=getSharedPreferences( "settings",MODE_PRIVATE ).edit();
             editor.putString("name",response.getUserName());
             editor.putString("token",response.getAccessToken());
+            //editor.putString("UrlImage",response.getImg());
             editor.apply();
 
             //todo call new API
             UserInfoPresenter userInfoPresenter=new UserInfoPresenter(this,this);
             userInfoPresenter.getInfo();
 
-            NavigationActivity.changeMenu();
+            startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
+
+            //NavigationActivity.changeMenu();
             this.finish();
         }
     }

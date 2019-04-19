@@ -1,6 +1,7 @@
 package com.vegeta.my.dealer.presenter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.vegeta.my.dealer.R;
@@ -49,6 +50,7 @@ public class RegistrationPresenter {
 
                     RegistrationResponse registrationResponse= gson.fromJson(response.errorBody().charStream(),RegistrationResponse.class);
                     registrationInterface.getRegisterData(registrationResponse);
+
                 }
                 else {
                     registrationInterface.getRegisterData(null);

@@ -49,7 +49,7 @@ public class Profile implements  Parcelable
             ;
     private final static long serialVersionUID = 7196023463847901318L;
 
-    protected Profile(Parcel in) {
+    private Profile(Parcel in) {
         this.$id = ((String) in.readValue((String.class.getClassLoader())));
         this.id = ((String) in.readValue((String.class.getClassLoader())));
         this.email = ((String) in.readValue((String.class.getClassLoader())));

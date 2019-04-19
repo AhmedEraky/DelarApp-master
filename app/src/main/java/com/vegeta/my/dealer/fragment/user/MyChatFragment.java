@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.activity.SplashActivity;
 import com.vegeta.my.dealer.adapter.chat.MyChatAdapter;
 import com.vegeta.my.dealer.model.chat.ChatModel;
@@ -73,6 +74,9 @@ public class MyChatFragment extends FragmentParent  implements ChatClick{
                 Toast.makeText(navigationActivity, "خطاء في الاتصال بالشبكه", Toast.LENGTH_SHORT).show();
             }
         });
+
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
 
         return view;
 

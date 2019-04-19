@@ -1,7 +1,10 @@
 package com.vegeta.my.dealer.fragment.upload;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,20 +12,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
+import com.vegeta.my.dealer.Utils.Maps.Validation;
 import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.adapter.category.AddCategoryAdapter;
+import com.vegeta.my.dealer.api.NetworkUtil;
 import com.vegeta.my.dealer.fragment.user.DriverFragment;
 import com.vegeta.my.dealer.fragment.user.FragmentParent;
 import com.vegeta.my.dealer.fragment.user.ProductsFragment;
+import com.vegeta.my.dealer.model.AdsModels.ApiAdvertiseModel;
 import com.vegeta.my.dealer.model.category.Category;
 import com.vegeta.my.dealer.model.product.ProductAddBody;
 import com.vegeta.my.dealer.view.CategoryClick;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.vegeta.my.dealer.Utils.Maps.Validation.buildDialog;
 
 public class CategorySelectionFragment extends FragmentParent implements
         CategoryClick {
@@ -64,6 +81,7 @@ public class CategorySelectionFragment extends FragmentParent implements
         categories.add(category);
 
     }
+
     private void setRecycleContent() {
         AddCategoryAdapter categoryAdapter=new AddCategoryAdapter(this.getContext(),categories);
         categoryAdapter.onClick(this);
@@ -101,6 +119,10 @@ public class CategorySelectionFragment extends FragmentParent implements
         body=new ProductAddBody();
         setRetainInstance(true);
 
+
+
+
+
         findviews();
         setData();
         setRecycleContent();
@@ -108,6 +130,9 @@ public class CategorySelectionFragment extends FragmentParent implements
 
         view.setFocusableInTouchMode(true);
         view.requestFocus();
+
+        new DelarUtils().getAds(this.getActivity(),view);
+        DelarUtils.flagSearchHome=true;
 
         return view;
     }

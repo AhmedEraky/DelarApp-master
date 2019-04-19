@@ -10,9 +10,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.vegeta.my.dealer.R;
+import com.vegeta.my.dealer.Utils.Maps.DelarUtils;
 import com.vegeta.my.dealer.model.login.LoginResponse;
 import com.vegeta.my.dealer.model.login.UserInfoResponse;
+import io.fabric.sdk.android.Fabric;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -23,15 +28,17 @@ public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         userInfo=new UserInfoResponse();
         userData=new LoginResponse();
         loginCheck();
 
         Thread thread=new Thread(()->{
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -48,6 +55,7 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences( "settings", Context.MODE_PRIVATE );
         userData.setUserName(sharedPreferences.getString( "name", "" ));
         userData.setAccessToken(sharedPreferences.getString( "token", "" ));
+        userData.setImg(sharedPreferences.getString( "UrlImage", "" ));
         userInfo.setId(sharedPreferences.getString("userID",""));
     }
 }
