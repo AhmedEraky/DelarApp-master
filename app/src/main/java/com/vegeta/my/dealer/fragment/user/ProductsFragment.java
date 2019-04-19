@@ -60,7 +60,6 @@ public class ProductsFragment extends FragmentParent implements
             id = bundle.getInt("category", -1);
             searchID = bundle.getInt("searchCategory", -1);
              query=bundle.getString("query");
-
             findViews();
             if(searchID==-1&&id!=-1){
                 setData();
