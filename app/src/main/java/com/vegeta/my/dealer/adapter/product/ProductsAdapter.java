@@ -31,6 +31,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     public ProductsAdapter(Context context, ArrayList<Product> products) {
         this.context = context;
         this.products = products;
+
+
     }
 
     public void onClick(ProductClick onClickProdutActivity) {
