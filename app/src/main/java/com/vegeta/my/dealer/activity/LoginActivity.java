@@ -232,12 +232,11 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
         SharedPreferences.Editor editor1=getSharedPreferences( "settings",MODE_PRIVATE ).edit();
         editor1.putString("userID",loginResponse.getAccessToken());
         SplashActivity.userInfo.setImageURl(loginResponse.getImg());
-        SplashActivity.userInfo.setId(loginResponse.getImg());
         SplashActivity.userInfo.setUsername(loginResponse.getUserName());
         editor1.apply();
 
-        /*UserInfoPresenter userInfoPresenter=new UserInfoPresenter(this,this);
-        userInfoPresenter.getInfo();*/
+        UserInfoPresenter userInfoPresenter=new UserInfoPresenter(this,this);
+        userInfoPresenter.getInfo();
 
         startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
 
@@ -272,7 +271,6 @@ public class LoginActivity extends AppCompatActivity implements LoginDataInterfa
 
             }
         });
-
         createNewAccount.setOnClickListener(v -> {
             Intent intent=new Intent(this,RegistrationActivity.class);
             this.startActivity(intent);
