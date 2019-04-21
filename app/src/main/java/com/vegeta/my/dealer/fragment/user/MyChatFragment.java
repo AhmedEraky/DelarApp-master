@@ -51,7 +51,7 @@ public class MyChatFragment extends FragmentParent  implements ChatClick{
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference(SplashActivity.userInfo.getId());
         setRecycle();
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.orderByChild("seen").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1 :dataSnapshot.getChildren()){
@@ -62,7 +62,8 @@ public class MyChatFragment extends FragmentParent  implements ChatClick{
                     int pID= (int) productid;
                     fire.setProductID(pID);
                     fire.setProductUser((String) dataSnapshot1.child("productUser").getValue());
-
+                    fire.setProductImage((String) dataSnapshot1.child("productImage").getValue());
+                    fire.setSeen((String) dataSnapshot1.child("seen").getValue());
                     userChat.add(fire);
                 }
                 myChatAdapter.notifyDataSetChanged();
@@ -96,13 +97,14 @@ public class MyChatFragment extends FragmentParent  implements ChatClick{
 
     @Override
     public void openUserChat(UserChat userChat) {
+        database.getReference(SplashActivity.userInfo.getId()).child(userChat.getChatID()).child("seen").setValue("1");
         ChatFragment chatFragment=new ChatFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("id", userChat.getProductID());
         bundle.putString("name",userChat.getProductName());
         bundle.putString("productUser",userChat.getProductUser());
         bundle.putString("chatID",userChat.getChatID());
-
+        bundle.putString("productImage",userChat.getProductImage());
         chatFragment.setArguments(bundle);
         getFragmentManager().beginTransaction().add( R.id.frame
                 ,chatFragment )

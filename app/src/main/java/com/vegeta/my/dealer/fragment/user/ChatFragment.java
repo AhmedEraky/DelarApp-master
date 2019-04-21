@@ -42,6 +42,7 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
     private EditText edMessage;
     NetworkConnection networkConnection;
     String productUserID;
+    String productImage;
 
 
     public ChatFragment() {
@@ -96,6 +97,8 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
         userChat.setProductName(productName);
         userChat.setProductUser(productUserID);
         userChat.setProductID(productID);
+        userChat.setProductImage(productImage);
+        userChat.setSeen("0");
         mFirebaseDatabaseReference.child(SplashActivity.userInfo.getId()).child(CHAT_REFERENCE).setValue(userChat);
         mFirebaseDatabaseReference.child(productUserID).child(CHAT_REFERENCE).setValue(userChat);
 
@@ -160,6 +163,9 @@ public class ChatFragment extends FragmentParent  implements  View.OnClickListen
             productID = bundle.getInt("id");
             productName = bundle.getString("name");
             productUserID=bundle.getString("productUser");
+            productImage=bundle.getString("productImage");
+            if(productImage==null)
+                productImage="";
 
             if (bundle.containsKey("chatID"))
                 CHAT_REFERENCE=bundle.getString("chatID");

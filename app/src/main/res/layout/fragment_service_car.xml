@@ -1,293 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <ScrollView
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    >
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
         >
 
-        <android.support.v7.widget.LinearLayoutCompat
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/upload_driver_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:hint="اسم السائق"
+            >
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/upload_driver_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/upload_driver_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_name"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:hint="متجه من">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/upload_driver_start_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/upload_driver_destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_start"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:hint="متجه الي">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/upload_driver_destination_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/upload_driver_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_car"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
             android:orientation="vertical"
-            android:gravity="center">
+            >
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/upload_driver_name"
+            <TextView
+                android:id="@+id/date"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:hint="اسم السائق"
-                >
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/upload_driver_name_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/upload_driver_start"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_name"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:hint="متجه من">
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/upload_driver_start_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/upload_driver_destination"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_start"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:hint="متجه الي">
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/upload_driver_destination_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/upload_driver_car"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_destination"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:visibility="gone"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:hint="نوع السياره">
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/upload_driver_car_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-
-
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:text="موعد الرحلة"
+                android:padding="@dimen/_10sdp"
+                android:gravity="right"
+                />
             <android.support.v7.widget.LinearLayoutCompat
-                android:id="@+id/upload_driver_time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_car"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:orientation="vertical"
+                android:layout_height="@dimen/_1sdp"
+                android:background="#66000000"
                 >
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="date"
-                    android:text="موعد الرحلة"
-                    android:padding="@dimen/_10sdp"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="right"
-                    />
-                <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:background="#66000000"
-                    >
-
-                </android.support.v7.widget.LinearLayoutCompat>
-
-
-            </android.support.v7.widget.LinearLayoutCompat>
-            <android.support.v7.widget.LinearLayoutCompat
-                android:id="@+id/upload_driver_time2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_time"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="date"
-                    android:text="وقت الرحلة"
-                    android:padding="@dimen/_10sdp"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="right"
-                    />
-                <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:background="#66000000"
-                    >
-
-                </android.support.v7.widget.LinearLayoutCompat>
-
 
             </android.support.v7.widget.LinearLayoutCompat>
 
-            <RelativeLayout
-                android:id="@+id/upload_driver_seat"
+
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/upload_driver_time2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_time"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_time2"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:text="عدد المقاعد المتاحة"
-                    android:textColor="#000" />
-
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/num_seat"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:background="@drawable/button_shape_small_border_gray"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:text="1"
-                    />
-
-                <ImageView
-                    android:id="@+id/increaseSeat"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:visibility="gone"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/plus" />
-
-                <TextView
-                    android:id="@+id/numberOfSeats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:visibility="gone"
-                    android:layout_toRightOf="@+id/increaseSeat"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:text="4"
-                    android:textSize="@dimen/_15sdp" />
-
-                <ImageView
-                    android:id="@+id/decreaseSeats"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/numberOfSeats"
-                    android:visibility="gone"
-                    android:src="@drawable/minus" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/upload_driver_price"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:text="وقت الرحلة"
+                android:padding="@dimen/_10sdp"
+                android:gravity="right"
+                />
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_seat"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp">
+                android:layout_height="@dimen/_1sdp"
+                android:background="#66000000"
+                >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:text="سعر المقاعد"
-                    android:textColor="#000" />
+            </android.support.v7.widget.LinearLayoutCompat>
 
-
-                <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/seatPrice"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:background="@drawable/button_shape_small_border_gray"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:text="1"
-                    />
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/upload_driver_price"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:gravity="bottom">
-
-                <Button
-                    android:id="@+id/service_provider_next"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ride_status_green"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:text="التالي"
-                    android:textColor="#fff"
-                    android:textSize="@dimen/_15sdp"
-
-                    />
-
-                <Button
-                    android:id="@+id/service_provider2_previous"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ride_status_green"
-                    android:fontFamily="@font/cairo_semibold"
-                    android:text="السابق"
-                    android:textColor="#fff"
-                    android:textSize="@dimen/_15sdp" />
-            </LinearLayout>
 
         </android.support.v7.widget.LinearLayoutCompat>
 
-    </ScrollView>
+        <RelativeLayout
+            android:id="@+id/upload_driver_seat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_time2"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp">
 
-    <include
-        layout="@layout/ads_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="عدد المقاعد المتاحة"
+                android:textColor="#000" />
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/num_seat"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@drawable/button_shape_small_border_gray"
+                android:padding="@dimen/_5sdp"
+                android:text="1"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/upload_driver_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_seat"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="سعر المقاعد"
+                android:textColor="#000" />
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/seatPrice"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@drawable/button_shape_small_border_gray"
+                android:padding="@dimen/_5sdp"
+                android:text="1"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_driver_price"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/service_provider_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/ride_status_green"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="التالي"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp"
+
+                />
+
+            <Button
+                android:id="@+id/service_provider2_previous"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/ride_status_green"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="السابق"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</ScrollView>

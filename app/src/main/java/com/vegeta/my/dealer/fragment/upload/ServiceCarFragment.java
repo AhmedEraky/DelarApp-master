@@ -203,17 +203,6 @@ public class ServiceCarFragment extends FragmentParent {
             getFragmentManager().popBackStack();
         });
 
-        increaseSeats.setOnClickListener(v -> {
-            Integer newNumber= Integer.parseInt(numberOfSeats.getText().toString())+1;
-            numberOfSeats.setText(Integer.toString(newNumber));
-        });
-
-        decreaseSeats.setOnClickListener(v -> {
-            if (!numberOfSeats.getText().toString().equals("0")){
-                Integer newNumber= Integer.parseInt(numberOfSeats.getText().toString())-1;
-                numberOfSeats.setText(Integer.toString(newNumber));
-            }
-        });
     }
     private void getBearertoken( ) {
 
@@ -255,9 +244,6 @@ public class ServiceCarFragment extends FragmentParent {
         time=view.findViewById(R.id.time);
         bNext=view.findViewById(R.id.service_provider_next);
         previous=view.findViewById(R.id.service_provider2_previous);
-        increaseSeats=view.findViewById(R.id.increaseSeat);
-        decreaseSeats=view.findViewById(R.id.decreaseSeats);
-        numberOfSeats=view.findViewById(R.id.numberOfSeats);
         num_seat=view.findViewById(R.id.num_seat);
         seatPrice=view.findViewById(R.id.seatPrice);
 

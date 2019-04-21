@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.vegeta.my.dealer.R;
 import com.vegeta.my.dealer.activity.NavigationActivity;
 import com.vegeta.my.dealer.model.chat.ChatModel;
@@ -55,6 +56,15 @@ public class MyChatAdapter extends RecyclerView.Adapter<MyChatAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.chatName.setText(userChat.get(position).getProductName());
         holder.chatItem.setOnClickListener(v -> chatClick.openUserChat(userChat.get(position)));
+
+        if (userChat.get(position).getProductImage() == null || userChat.get(position).getProductImage().equals(""))
+            Picasso.with(context).load(R.drawable.profie_pic).into(holder.chatImage);
+        else
+            Picasso.with(context).load(userChat.get(position).getProductImage()).error(R.drawable.profie_pic).into(holder.chatImage);
+
+        if(userChat.get(position).getSeen()!=null&&userChat.get(position).getSeen().equals("0")){
+            holder.seen.setVisibility(View.VISIBLE);
+        }
   /*      SharedPreferences mSharedPreferences;
 
         mSharedPreferences      = context.getSharedPreferences("tokenDetail",MODE_PRIVATE);
@@ -73,11 +83,13 @@ public class MyChatAdapter extends RecyclerView.Adapter<MyChatAdapter.ViewHolder
         ImageView chatImage;
         TextView chatName;
         RelativeLayout chatItem;
+        TextView seen;
         public ViewHolder(View itemView) {
             super(itemView);
             chatItem=itemView.findViewById(R.id.chat_item);
             chatImage=itemView.findViewById(R.id.chat_product_image);
             chatName=itemView.findViewById(R.id.chat_product_txt);
+            seen=itemView.findViewById(R.id.new_message);
         }
     }
 }

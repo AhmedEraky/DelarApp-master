@@ -118,6 +118,10 @@ public class ProductDetailsFragment extends FragmentParent {
             bundle.putInt("id", product.getId());
             bundle.putString("name",product.getName());
             bundle.putString("productUser",product.getUsername());
+            if(product.getServiceProviderImages().size()>0)
+                bundle.putString("productImage",product.getServiceProviderImages().get(0).getImageUrl());
+            else
+                bundle.putString("productImage","");
 
             chatFragment.setArguments(bundle);
             getFragmentManager().beginTransaction().add( R.id.frame
